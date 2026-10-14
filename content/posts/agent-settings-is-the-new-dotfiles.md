@@ -3,6 +3,7 @@ title: "Agent Settings Is the New Dotfiles"
 description: "How autonomous agents shift the developer configuration surface from personal shell dotfiles to agent environments, orchestration, and evaluation."
 publishDate: "2026-10-14T15:30:00.000Z"
 tags: ["ai", "agents", "engineering", "tooling", "architecture"]
+ogImage: "/images/agent-settings-new-dotfiles.png"
 ---
 
 ![Agent Settings Is the New Dotfiles](/images/agent-settings-new-dotfiles.png)
