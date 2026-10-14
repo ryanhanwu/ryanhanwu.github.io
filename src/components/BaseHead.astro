@@ -48,8 +48,10 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <meta content={siteConfig.title} property="og:site_name" />
 <meta content={siteConfig.ogLocale} property="og:locale" />
 <meta content={socialImageURL} property="og:image" />
+<meta content={socialImageURL} property="og:image:secure_url" />
 <meta content="1200" property="og:image:width" />
 <meta content="630" property="og:image:height" />
+<meta content={title} property="og:image:alt" />
 {
 	articleDate && (
 		<>
@@ -60,11 +62,56 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 }
 
 {/* Twitter */}
-<meta content="summary_large_image" property="twitter:card" />
-<meta content={canonicalURL} property="twitter:url" />
-<meta content={title} property="twitter:title" />
-<meta content={description} property="twitter:description" />
-<meta content={socialImageURL} property="twitter:image" />
+<meta content="summary_large_image" name="twitter:card" />
+<meta content={canonicalURL} name="twitter:url" />
+<meta content={title} name="twitter:title" />
+<meta content={description} name="twitter:description" />
+<meta content={socialImageURL} name="twitter:image" />
+<meta content={title} name="twitter:image:alt" />
+<meta content="@ryanhanwu" name="twitter:site" />
+<meta content="@ryanhanwu" name="twitter:creator" />
+
+{/* Structured Data (Schema.org) */}
+<script
+	type="application/ld+json"
+	set:html={JSON.stringify(
+		articleDate
+			? {
+					"@context": "https://schema.org",
+					"@type": "BlogPosting",
+					headline: title,
+					description,
+					image: socialImageURL,
+					datePublished: articleDate,
+					author: {
+						"@type": "Person",
+						name: siteConfig.author,
+						url: siteConfig.url,
+					},
+					publisher: {
+						"@type": "Person",
+						name: siteConfig.author,
+						url: siteConfig.url,
+					},
+					mainEntityOfPage: {
+						"@type": "WebPage",
+						"@id": canonicalURL.href,
+					},
+				}
+			: {
+					"@context": "https://schema.org",
+					"@type": "WebSite",
+					name: siteConfig.title,
+					description,
+					url: siteConfig.url,
+					author: {
+						"@type": "Person",
+						name: siteConfig.author,
+						url: siteConfig.url,
+					},
+				}
+	)}
+/>
 
 {/* Sitemap */}
 <link href="/sitemap-index.xml" rel="sitemap" />
