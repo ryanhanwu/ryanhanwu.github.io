@@ -49,3 +49,37 @@ Every technical post or essay should follow this general rhythm:
 - **Execution > Raw Ideas**: A great idea is only 10%; the remaining 90% is execution, refinement, and technical excellence.
 - **Culture & People**: High-caliber talent (A-players) need strong direction, direct transparent communication, and mutual respect, not protective eggshells.
 - **Content > Bureaucracy**: Don't let rigid processes choke out product value and engineering velocity.
+
+---
+
+## 5. Blog Post Image Generation Guidelines
+
+All generated images (cover images, hero visuals, illustrations) for blog posts must strictly adhere to a black-and-white / monochrome aesthetic:
+
+### Aesthetic Pillars & Directions
+- **Short & Minimalist**:
+  - Life in monochrome
+  - Less noise, more focus
+  - Timeless
+  - Back to the basics
+  - B&W / Monochromatic / Shades of gray
+  - Nothing gold can stay (in black and white)
+- **Classy & Aesthetic**:
+  - Simplicity is the ultimate sophistication, and elegance never fades.
+  - Classic never goes out of style.
+  - Highlighting the soul in a timeless love affair with black and white.
+- **Short & Punchy (One-Liners)**:
+  - Black, white, and infinite shades in between.
+  - Color is descriptive; black and white is interpretive.
+  - Experience monochrome magic while chasing shadows and light.
+- **Edgy & Moody**:
+  - Mood: black and white.
+  - Quiet storms make the loudest impact.
+  - Finding poetry and monochromatic musings in the dark.
+
+### Image Prompting Protocol
+When formulating image generation prompts (e.g. for cover art or article figures):
+1. **Palette**: Strictly monochrome / black and white / grayscale. No accent colors unless explicitly instructed by the user.
+2. **Lighting & Contrast**: Dramatic interplay of light and shadow (chiaroscuro), deep blacks, clean whites, textured grays.
+3. **Composition**: Minimalist, intentional negative space, uncluttered, focused subject matter, timeless elegance.
+
