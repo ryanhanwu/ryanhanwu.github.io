@@ -1,7 +1,9 @@
 ---
-title: Hello, Welcome
-description: An introduction to using the note feature in Astro Cactus
+title: Hello, Visitor
+description: Welcome to Ryan's blog
 publishDate: "2024-10-14T11:23:00Z"
 ---
 
-Hi, Hello. This is Ryan's blog
+I'm Ryan, an engineer building AI products to help people live better lives. I've been in the industry for nearly two decades.
+
+Marathon runner, dog dad, and currently based in NYC.
