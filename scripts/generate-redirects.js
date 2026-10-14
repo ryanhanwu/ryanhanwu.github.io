@@ -1,0 +1,150 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const redirects = {
+  "/2019/08/how-to-survive-a-leadership-vacuum.html": "/posts/how-to-survive-a-leadership-vacuum/",
+  "/2019/08/how-to-survive-a-leadership-vacuum": "/posts/how-to-survive-a-leadership-vacuum/",
+  "/2019/08/how-to-survive-a-leadership-vacuum/": "/posts/how-to-survive-a-leadership-vacuum/",
+  "/2013/07/using-nodejs-to-redirect-and-proxy-normal-http+websockets-traffic-based-on-hostname.html": "/posts/using-nodejs-to-redirect-and-proxy-normal-http+websockets-traffic-based-on-hostname/",
+  "/2013/07/using-nodejs-to-redirect-and-proxy-normal-http+websockets-traffic-based-on-hostname": "/posts/using-nodejs-to-redirect-and-proxy-normal-http+websockets-traffic-based-on-hostname/",
+  "/2013/07/using-nodejs-to-redirect-and-proxy-normal-http+websockets-traffic-based-on-hostname/": "/posts/using-nodejs-to-redirect-and-proxy-normal-http+websockets-traffic-based-on-hostname/",
+  "/it": "/posts/it/",
+  "/2012/10/xcode-plug-in-colorsense-codepilot.html": "/posts/xcode-plug-in-colorsense-codepilot/",
+  "/2012/10/xcode-plug-in-colorsense-codepilot": "/posts/xcode-plug-in-colorsense-codepilot/",
+  "/2012/10/xcode-plug-in-colorsense-codepilot/": "/posts/xcode-plug-in-colorsense-codepilot/",
+  "/2012/03/request-https-resource-in-java.html": "/posts/request-https-resource-in-java/",
+  "/2012/03/request-https-resource-in-java": "/posts/request-https-resource-in-java/",
+  "/2012/03/request-https-resource-in-java/": "/posts/request-https-resource-in-java/",
+  "/2013/03/responsive-media-query-quick-reference.html": "/posts/responsive-media-query-quick-reference/",
+  "/2013/03/responsive-media-query-quick-reference": "/posts/responsive-media-query-quick-reference/",
+  "/2013/03/responsive-media-query-quick-reference/": "/posts/responsive-media-query-quick-reference/",
+  "/2012/09/simple-one-step-webhttp-server.html": "/posts/simple-one-step-webhttp-server/",
+  "/2012/09/simple-one-step-webhttp-server": "/posts/simple-one-step-webhttp-server/",
+  "/2012/09/simple-one-step-webhttp-server/": "/posts/simple-one-step-webhttp-server/",
+  "/steve-jobs-lost-interview": "/posts/steve-jobs-lost-interview/",
+  "/2012/10/update-enterprise-apps-for-ios-devices.html": "/posts/update-enterprise-apps-for-ios-devices/",
+  "/2012/10/update-enterprise-apps-for-ios-devices": "/posts/update-enterprise-apps-for-ios-devices/",
+  "/2012/10/update-enterprise-apps-for-ios-devices/": "/posts/update-enterprise-apps-for-ios-devices/",
+  "/2013/06/make-uilabel-glow.html": "/posts/make-uilabel-glow/",
+  "/2013/06/make-uilabel-glow": "/posts/make-uilabel-glow/",
+  "/2013/06/make-uilabel-glow/": "/posts/make-uilabel-glow/",
+  "/2012/11/my-mac-app-list-v11.html": "/posts/my-mac-app-list-v11/",
+  "/2012/11/my-mac-app-list-v11": "/posts/my-mac-app-list-v11/",
+  "/2012/11/my-mac-app-list-v11/": "/posts/my-mac-app-list-v11/",
+  "/2012/03/my-sublime-text-2-on-windows-7-64bit.html": "/posts/my-sublime-text-2-on-windows-7-64bit/",
+  "/2012/03/my-sublime-text-2-on-windows-7-64bit": "/posts/my-sublime-text-2-on-windows-7-64bit/",
+  "/2012/03/my-sublime-text-2-on-windows-7-64bit/": "/posts/my-sublime-text-2-on-windows-7-64bit/",
+  "/2012/09/my-sublime-text-2-plug-in-v2.html": "/posts/my-sublime-text-2-plug-in-v2/",
+  "/2012/09/my-sublime-text-2-plug-in-v2": "/posts/my-sublime-text-2-plug-in-v2/",
+  "/2012/09/my-sublime-text-2-plug-in-v2/": "/posts/my-sublime-text-2-plug-in-v2/",
+  "/2013/07/oh-my-zsh-config.html": "/posts/oh-my-zsh-config/",
+  "/2013/07/oh-my-zsh-config": "/posts/oh-my-zsh-config/",
+  "/2013/07/oh-my-zsh-config/": "/posts/oh-my-zsh-config/",
+  "/2012/10/ios-viewcontroller.html": "/posts/ios-viewcontroller/",
+  "/2012/10/ios-viewcontroller": "/posts/ios-viewcontroller/",
+  "/2012/10/ios-viewcontroller/": "/posts/ios-viewcontroller/",
+  "/2012/04/ios-web-css-3.html": "/posts/ios-web-css-3/",
+  "/2012/04/ios-web-css-3": "/posts/ios-web-css-3/",
+  "/2012/04/ios-web-css-3/": "/posts/ios-web-css-3/",
+  "/iron-lady": "/posts/iron-lady/",
+  "/2013/07/javascript-number-only-lock.html": "/posts/javascript-number-only-lock/",
+  "/2013/07/javascript-number-only-lock": "/posts/javascript-number-only-lock/",
+  "/2013/07/javascript-number-only-lock/": "/posts/javascript-number-only-lock/",
+  "/2012/08/mac-app-widget-configure.html": "/posts/mac-app-widget-configure/",
+  "/2012/08/mac-app-widget-configure": "/posts/mac-app-widget-configure/",
+  "/2012/08/mac-app-widget-configure/": "/posts/mac-app-widget-configure/",
+  "/2012/09/facebook123.html": "/posts/facebook123/",
+  "/2012/09/facebook123": "/posts/facebook123/",
+  "/2012/09/facebook123/": "/posts/facebook123/",
+  "/2013/04/hinetwifi.html": "/posts/hinetwifi/",
+  "/2013/04/hinetwifi": "/posts/hinetwifi/",
+  "/2013/04/hinetwifi/": "/posts/hinetwifi/",
+  "/2013/11/how-to-monitor-iphone's-http-traffic.html": "/posts/how-to-monitor-iphone's-http-traffic/",
+  "/2013/11/how-to-monitor-iphone's-http-traffic": "/posts/how-to-monitor-iphone's-http-traffic/",
+  "/2013/11/how-to-monitor-iphone's-http-traffic/": "/posts/how-to-monitor-iphone's-http-traffic/",
+  "/2012/12/ios-get-current-location-and-city-name.html": "/posts/ios-get-current-location-and-city-name/",
+  "/2012/12/ios-get-current-location-and-city-name": "/posts/ios-get-current-location-and-city-name/",
+  "/2012/12/ios-get-current-location-and-city-name/": "/posts/ios-get-current-location-and-city-name/",
+  "/2012/09/apple-developer-enterprise-how-to.html": "/posts/apple-developer-enterprise-how-to/",
+  "/2012/09/apple-developer-enterprise-how-to": "/posts/apple-developer-enterprise-how-to/",
+  "/2012/09/apple-developer-enterprise-how-to/": "/posts/apple-developer-enterprise-how-to/",
+  "/2013/07/best-way-of-singleton-in-objective-c.html": "/posts/best-way-of-singleton-in-objective-c/",
+  "/2013/07/best-way-of-singleton-in-objective-c": "/posts/best-way-of-singleton-in-objective-c/",
+  "/2013/07/best-way-of-singleton-in-objective-c/": "/posts/best-way-of-singleton-in-objective-c/",
+  "/display-remote-nodejs-service-logs-on": "/posts/display-remote-nodejs-service-logs-on/",
+  "/2013/07/effecktcss-css-library-of-performant-transitions-and-animations-for-mobile.html": "/posts/effecktcss-css-library-of-performant-transitions-and-animations-for-mobile/",
+  "/2013/07/effecktcss-css-library-of-performant-transitions-and-animations-for-mobile": "/posts/effecktcss-css-library-of-performant-transitions-and-animations-for-mobile/",
+  "/2013/07/effecktcss-css-library-of-performant-transitions-and-animations-for-mobile/": "/posts/effecktcss-css-library-of-performant-transitions-and-animations-for-mobile/",
+  "/blog-post": "/posts/blog-post/",
+  "/2011/01/873393.html": "/posts/873393/",
+  "/2011/01/873393": "/posts/873393/",
+  "/2011/01/873393/": "/posts/873393/",
+  "/2011/03/978752.html": "/posts/978752/",
+  "/2011/03/978752": "/posts/978752/",
+  "/2011/03/978752/": "/posts/978752/",
+  "/2014/10/Upgrade-to-Sublime-Text-3.html": "/posts/upgrade-to-sublime-text-3/",
+  "/2014/10/Upgrade-to-Sublime-Text-3": "/posts/upgrade-to-sublime-text-3/",
+  "/2014/10/Upgrade-to-Sublime-Text-3/": "/posts/upgrade-to-sublime-text-3/",
+  "/2015/03/Upgrade-to-Hexo-3.html": "/posts/upgrade-to-hexo-3/",
+  "/2015/03/Upgrade-to-Hexo-3": "/posts/upgrade-to-hexo-3/",
+  "/2015/03/Upgrade-to-Hexo-3/": "/posts/upgrade-to-hexo-3/",
+  "/2010/09/760362.html": "/posts/760362/",
+  "/2010/09/760362": "/posts/760362/",
+  "/2010/09/760362/": "/posts/760362/",
+  "/2010/10/785258.html": "/posts/785258/",
+  "/2010/10/785258": "/posts/785258/",
+  "/2010/10/785258/": "/posts/785258/",
+  "/2010/11/826690.html": "/posts/826690/",
+  "/2010/11/826690": "/posts/826690/",
+  "/2010/11/826690/": "/posts/826690/",
+  "/2010/12/853081.html": "/posts/853081/",
+  "/2010/12/853081": "/posts/853081/",
+  "/2010/12/853081/": "/posts/853081/",
+  "/2011/05/1066581.html": "/posts/1066581/",
+  "/2011/05/1066581": "/posts/1066581/",
+  "/2011/05/1066581/": "/posts/1066581/",
+  "/2011/10/1185215.html": "/posts/1185215/",
+  "/2011/10/1185215": "/posts/1185215/",
+  "/2011/10/1185215/": "/posts/1185215/",
+  "/2010/08/746247.html": "/posts/746247/",
+  "/2010/08/746247": "/posts/746247/",
+  "/2010/08/746247/": "/posts/746247/",
+  "/2010/08/750084.html": "/posts/750084/",
+  "/2010/08/750084": "/posts/750084/",
+  "/2010/08/750084/": "/posts/750084/"
+};
+
+const distDir = path.resolve("dist");
+if (!fs.existsSync(distDir)) {
+  console.error("dist directory does not exist! Run astro build first.");
+  process.exit(1);
+}
+
+let count = 0;
+for (const [fromPath, toPath] of Object.entries(redirects)) {
+  const cleanFrom = fromPath.replace(/^\//, "");
+  let targetFile;
+  if (cleanFrom.endsWith(".html")) {
+    targetFile = path.join(distDir, cleanFrom);
+  } else {
+    targetFile = path.join(distDir, cleanFrom, "index.html");
+  }
+
+  fs.mkdirSync(path.dirname(targetFile), { recursive: true });
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <link rel="canonical" href="${toPath}">
+  <meta http-equiv="refresh" content="0; url=${toPath}">
+</head>
+<body>
+  <p>Redirecting to <a href="${toPath}">${toPath}</a>...</p>
+</body>
+</html>`;
+  fs.writeFileSync(targetFile, html, "utf8");
+  count++;
+}
+
+console.log(`Generated ${count} redirect files in dist/`);
