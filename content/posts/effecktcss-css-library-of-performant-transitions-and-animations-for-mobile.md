@@ -1,5 +1,5 @@
 ---
-title: "<a href=\"http://www.youtube.com/watch?v=Qc40YDFA4Bg\" target=\"_blank\">Effeckt.css - CSS library of performant transitions and animations for mobile</a>"
+title: "Effeckt.css - CSS library of performant transitions and animations for mobile"
 description: "Very impressive trailer. Check the Effeckt.css Githubhttp://h5bp.github.io/Effeckt.css/dist/"
 publishDate: "2013-07-20T19:19:16.000Z"
 tags: ["css","framework","shared"]
