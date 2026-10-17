@@ -25,3 +25,5 @@ pnpm-debug.log*
 .astro
 .cursor/
 .gemini/
+# private agent instructions (kept in ryanhanwu/agent-configs)
+GEMINI.md
