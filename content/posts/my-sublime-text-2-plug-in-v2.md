@@ -2,7 +2,7 @@
 title: "My Sublime Text 2 Plug-in V2"
 description: "Sublime Text 2http://www.sublimetext.com/  is one of my favorite plain text editor. It supports hundred of pluginstill growthing with highly productiv..."
 publishDate: "2012-09-26T22:10:00.000Z"
-tags: ["editor","sublime-text-2","tools"]
+tags: ["editor", "sublime-text-2", "tools", "plugins", "productivity"]
 ---
 
 [Sublime Text 2](http://www.sublimetext.com/)  is one of my favorite plain text editor. It supports hundred of plugin(still growthing) with highly productivity features.

@@ -2,7 +2,7 @@
 title: "Update Enterprise Apps for iOS Devices only ONE TAP ! (faster OTA)"
 description: "We all know that Apple provides an easy wayhttp://help.apple.com/iosdeployment-apps/mac/1.1/app43ad871eOTA - Over The Air to distribute your in-house..."
 publishDate: "2012-10-25T21:33:00.000Z"
-tags: ["ios","apple","app","ota","shared"]
+tags: ["ios", "apple", "app", "ota", "shared"]
 ---
 
 We all know that Apple provides an [easy way](http://help.apple.com/iosdeployment-apps/mac/1.1/#app43ad871e)(OTA - Over The Air) to distribute your in-house application through a simple web link like following.

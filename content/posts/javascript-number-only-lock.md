@@ -2,7 +2,7 @@
 title: "JavaScript number only lock"
 description: "javascript functionevent {     // Allow: backspace, delete, tab, escape, and enter     if  event.keyCode == 46 ||           event.keyCode == 8 ||..."
 publishDate: "2013-07-01T04:42:08.000Z"
-tags: ["javascript","jquery","dom-event","coding"]
+tags: ["javascript", "jquery", "dom-event", "coding", "frontend"]
 ---
 
 ```javascript

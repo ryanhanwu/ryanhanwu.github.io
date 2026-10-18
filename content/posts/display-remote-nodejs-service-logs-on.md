@@ -2,7 +2,7 @@
 title: "Display remote Node.JS service logs on Chrome Console"
 description: "In recent years, we got plenty of PaaShttp://en.wikipedia.org/wiki/Platformasaservice services which provide very simple and easy way to deploy our No..."
 publishDate: "2013-06-25T16:24:03.000Z"
-tags: ["javascript","node-js","tools"]
+tags: ["javascript", "node-js", "tools", "logging", "debugging"]
 ---
 
 In recent years, we got plenty of [PaaS](http://en.wikipedia.org/wiki/Platform_as_a_service) services which provide very simple and easy way to deploy our Node.JS services.

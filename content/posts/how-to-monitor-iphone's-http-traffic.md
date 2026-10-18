@@ -2,7 +2,7 @@
 title: "How to monitor iPhone's HTTP traffic"
 description: "I usually wonder how my iPhone apps communicate with their servers. I had a debate with my ex-coworker about the security of app communication. He thi..."
 publishDate: "2013-11-13T22:54:51.000Z"
-tags: ["ios","app","network","shared"]
+tags: ["ios", "app", "network", "shared", "security"]
 ---
 
 I usually wonder how my iPhone apps communicate with their servers. I had a debate with my ex-coworker about the security of app communication. He thinks we can use simple HTTP protocol for app communication, including authentication. But I insist that we should use more secure way for transmission in apps.

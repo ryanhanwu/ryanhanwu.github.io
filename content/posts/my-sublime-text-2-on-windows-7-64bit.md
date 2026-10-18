@@ -2,7 +2,7 @@
 title: "My Sublime Text 2 on Windows 7 64bit"
 description: "!http://www.catsone.com/wp-content/uploads/2011/10/MP900387742.jpg"
 publishDate: "2012-03-09T00:17:00.000Z"
-tags: ["editor","sublime-text-2","tools"]
+tags: ["editor", "sublime-text-2", "tools", "windows", "productivity"]
 ---
 
 ![](http://www.catsone.com/wp-content/uploads/2011/10/MP900387742.jpg)

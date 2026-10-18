@@ -2,7 +2,7 @@
 title: "Get current location and city name"
 description: "1\\. Add CoreLocation.framework to your project"
 publishDate: "2012-12-06T20:27:00.000Z"
-tags: ["ios","geolocation","objective-c","coding"]
+tags: ["ios", "geolocation", "objective-c", "coding", "corelocation"]
 ---
 
 1\. Add **CoreLocation.framework** to your project

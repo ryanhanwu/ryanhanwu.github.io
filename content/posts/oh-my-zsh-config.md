@@ -2,7 +2,7 @@
 title: "My Default Shell Configuration - Oh-my-zsh"
 description: "History of my default shell   I started to learn C Shellhttp://en.wikipedia.org/wiki/Cshelluse because of the part-time job I had got during universit..."
 publishDate: "2013-07-28T04:45:02.000Z"
-tags: ["zsh","shell","config","system-admin","oh-my-zsh","shared"]
+tags: ["zsh", "shell", "config", "system-admin", "oh-my-zsh", "shared"]
 ---
 
 ###History of my default shell  

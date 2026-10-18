@@ -1,57 +1,55 @@
 ---
-title: "看Steve Jobs - The Lost Interview 後感"
-description: "因為週末實在太忙，下週又都排滿了，所以就很趕時髦的，在這部電影上映的今天就去看了。"
+title: "Thoughts After Watching Steve Jobs: The Lost Interview"
+description: "A 1995 interview, watched on opening day. The parts that still apply: execution over ideas, A-players, content over process, and the cost of a weak architecture."
 publishDate: "2012-10-27T07:11:23.000Z"
-tags: ["steve-jobs","thinking"]
+tags: ["steve-jobs", "thinking", "leadership", "product", "culture"]
 ---
 
-因為週末實在太忙，下週又都排滿了，所以就很趕時髦的，在這部電影上映的今天就去看了。
+The weekend was packed and next week is full, so I did the fashionable thing and went the day it opened.
 
-結果… 不得不讓我再次覺得，Steve Jobs 真的是非常非常厲害。
+I came out thinking, again, that Steve Jobs was very, very good.
 
-（以下有部分電影內容 不喜者請勿繼續看)
+(Some of the film is below. Stop here if you would rather not.)
 
 * * *
 
-Steve Jobs 在受訪時，顯得有點緊張，**當時是1995年**（隔年NeXT才被Apple買下)，其中很多他的觀點，在現今的公司（不管是大企業或是新創公司）都可以作為參考。
+Jobs looks a little nervous in the interview. **It is 1995** (NeXT is bought by Apple the following year). A lot of what he says still works as a reference for companies today, large or just starting.
 
-以下，就以我理解的話來闡述這些觀點，如果有什麼問題，歡迎指教。
+What follows is how I understood it. Corrections welcome.
 
-> **行銷跟業務只有在非獨佔性的事業（像是可樂公司）會領導整個企業，因為產品本身沒有更新的很快，在這部份著手才是上策，但科技業並不是這樣。**  
-> 如果有些公司要copy國外的點子來做，卻將重點放在技術研發，那只能說，失敗率會很高，因為放錯重點…
+> **Marketing and sales lead the company only in businesses that are not a monopoly, like a cola company, because the product itself does not change very fast. That is where the leverage is. Technology is not like that.**  
+> If a company copies an idea from overseas and then puts the weight on technical R&D, the failure rate is going to be high. The weight is in the wrong place.
 
-獨佔性的企業不見得是大公司，可能只是一個小點子但沒人做（出來），或者是擁有特定的技術與架構的科技。執行面上，我相當認同EZTABLE CEO所說的，[專注在產品細節](http://www.hey-ac.com/5/post/2012/10/precious.html)。
+A company with a monopoly is not necessarily a big company. It might be a small idea nobody else has shipped, or a specific technology and architecture. On execution, I agree with the EZTABLE CEO: [focus on the details of the product](http://www.hey-ac.com/5/post/2012/10/precious.html).
 
-> **很多人認為好的點子就占了90%，但實際上執行是非常重要的。  
-> 頂尖的點子跟頂尖的產品之間，有著頂尖的技術。點子會在開發（執行）的過程中逐漸進化，並且變的更好；  
-> 所以必須雇用A咖，這些頂尖人才，會互相激勵，有時候還會爭論，吵架；但這對團隊目標是好的。**
-> 
-> **但這些A咖是最難管理的，所以他們需要一個領導者（就是講Steve Jobs自己）**  
-> 要好管的A咖是絕對不可能的，訪問者也提到Apple中一堆跟隨Steve Jobs的人後來都跑了XDDDD 一個好的軟體公司，就一定會希望建立好的文化，帶起整個團隊的正向循環，從不斷的嘗試與失敗中，做出最好的產品。只是很常見的是用錯了人，只懂得執行或者沒有辦法在細節上琢磨思考，最後只為了遵循原本粗略的規格與規範，反而被限制，無法在產品中真正的去帶給使用者想要傳遞的價值。
+> **A lot of people think a good idea is 90% of the work. Execution is what actually matters.**  
+> **Between a great idea and a great product there is great technology. Ideas evolve, and get better, while you are building them.**  
+> **So you have to hire A-players. Those people push each other. Sometimes they argue. Sometimes they fight. That is good for the goal of the team.**
+>
+> **A-players are also the hardest people to manage, so they need a leader (he is talking about himself).**  
+> An easy-to-manage A-player does not exist. The interviewer points out that a pile of people who followed Jobs at Apple later left. XDDDD A good software company wants a real culture, a positive loop across the team, and the best product it can get out of constant tries and failures. What happens more often is hiring the wrong people: people who can only execute, or who cannot sit with the details. They end up obeying a rough spec, get boxed in by it, and never put the value the product was supposed to carry into the user's hands.
 
-時常有人認為Steve Jobs是獨裁者，但在影片中他不斷強調，**公司是員工的不是老闆的**。回家路上，我想起前幾天看到很喜歡的一篇文章：[為什麼我們常愛說外國人「個人英雄主義」，但又常說「外國人比臺灣人懂得團隊合作」](http://woundero.wordpress.com/2012/10/25/team-and-hero/)。
+People often call Jobs a dictator. In the film he keeps saying **the company belongs to the employees, not the boss**. On the way home I remembered a piece I liked from a few days earlier: [Why we call foreigners "individual heroes," and also say foreigners understand teamwork better than Taiwanese people](http://woundero.wordpress.com/2012/10/25/team-and-hero/).
 
-我們可以說，Steve Jobs是一個擁有強勢領導到風格的領導者。他樂於受到團隊成員的遲疑，不妥協的團員對他而言是助力，不是阻力。他也很能夠直來直往的與團員們溝通，甚至進而說服自己的團員讓彼此一起往同一個方向走，是很正確的作法。訪談中，Steve Jobs認為:**“真正的頂尖人才，是不需要去呵護(Baby Care)他們的自尊心”**。只有暢所欲言的領導人，才有暢所欲言的團隊成員。
+Jobs is a leader with a strong style. He is glad when the team hesitates. A member who will not compromise is help, not friction. He can also talk to the team straight, and talk them into walking the same direction. That is the right move. In the interview he says: **"Real top talent does not need you to baby their ego."** Only a leader who says what they think gets a team that says what it thinks.
 
-上面那篇文章中，所提到台灣的產業中，有著”_一群不敢發問，大家沉默，排擠跳出來思考、發問的人，一群冷漠的寒蟬便形成了妥協而安靜的團隊”，_問題可能不只是台灣的教育教出不發問的小孩，**而是團隊領導者沒有辦法接受不妥協**（原因？顧慮團員面子/太愛面子/官僚保位/思考紊亂/脾氣不好/…自行想像）。最終下場都是採取高壓政策，請下面的人閉嘴。這樣的團隊，甭說是好產品，可能連產品都還沒做出來就被終止了。
+That article describes a pattern in Taiwanese industry: a group that does not dare to ask, a silence, and pressure on anyone who steps out to think or question. A cold chorus of cicadas becomes a quiet, compromised team. The problem is not only that the schools produce kids who do not ask. **The team leader cannot accept someone who will not compromise** (saving face, loving face, protecting a seat, muddled thinking, a bad temper — fill in your own). The ending is always the same high-pressure policy: everyone below, be quiet. A team like that will not ship a good product. It may not ship a product at all before the work is killed.
 
-> **產品的內容(Content)遠比程序(Process)來的重要，真正的靈魂是內容，不是那些程序。**  
-> 這跟前一陣子XDiteㄉㄉ寫的文章 [也許你該停下來聽聽工程師怎麼說](http://blog.xdite.net/posts/2012/10/07/maybe-you-should-listen-what-your-rd-said/) 不謀而合。常見的像是一個只懂得管理進度不在乎內容文化的Project Manager，就很有可能搞爛一整個產品。
+> **The content of the product matters far more than the process. The real soul is the content, not the process.**  
+> That lines up with something XDite wrote a while back, [Maybe you should stop and listen to what the engineers are saying](http://blog.xdite.net/posts/2012/10/07/maybe-you-should-listen-what-your-rd-said/). A project manager who only tracks the schedule and does not care about the content or the culture can wreck a whole product.
 
-當然，反過來說，R&D懂得的內容，也不能僅止於技術部分，而是將需求/人性等納入考量，並以技術的邏輯實現。最後，將文化帶入產品，讓使用者親身感受到。（再次呼應上面，A咖才做的到這些)
+The reverse is also true. What R&D understands cannot stop at the technology. It has to take the requirement and the human part into account, and then implement that with technical logic. Then the culture goes into the product, and the user can feel it. Which is the point above: A-players are the ones who can do this.
 
-> **真正的懂得內容的人，也才能將產品所需的成本給估算清楚。**  
-> 有些主管or老闆認為，R&D只是資產，今天寫了這些Code能動就好，不要太在乎架構，進度比較重要。
+> **The people who actually understand the content are also the ones who can estimate what the product will cost.**  
+> Some managers or bosses treat R&D as an asset: the code works today, don't fuss over the architecture, the schedule matters more.
 
-過一陣子，換了一批新的<del>肝</del>R&D，所花費的維護成本卻高的嚇人，這也是理所當然的，因為前人考量的少，後人就多花點功砍掉重練再加再改。這些成本，都是隱性的，只有從內容的角度去了解，才不會傻傻的花費額外的時間精力，最終導致產品失敗或錯失良機。
+A while later a new batch of <del>burned-out</del> R&D shows up, and the maintenance cost is frightening. That is the obvious result. The previous people thought too little, so the next people spend the effort to tear it down and rebuild, then add, then change. Those costs are hidden. You only see them if you look from the content. Otherwise you spend extra time and energy, and the product fails or misses the window.
 
-> **Programming將在未來十年大行其道，每個人都該寫程式。**
-> 
-> **寫程式這件事情是訓練人們的釐清自己的思考。人們寫程式是因為想分享他們的感覺，想用這個工具創造出自己的世界。**  
-> 1995年的Steve Jobs… 預言了2012年的 [Code Year](http://www.codeyear.com/) 這趨勢正夯。訪問中也提到了他對未來十年的看法，當時Jobs非常看好網路的發展，認為不管是印表機還是個人電腦都會因為網路而讓整個產業大變動。他還順便裱了一下Micro$oft，說還好網路技術不是被這個_不會創新_的公司所擁有。最後，他甚至預言，網路會成為未來社交的重要媒介。
+> **Programming is going to be everywhere in the next ten years. Everyone should write programs.**
+>
+> **Writing programs trains people to clarify their own thinking. People write programs because they want to share what they feel, and because they want a tool that lets them build their own world.**  
+> Steve Jobs in 1995, calling the 2012 [Code Year](http://www.codeyear.com/) trend while it was still heating up. In the interview he also talks about the next decade. He is very bullish on the network. Printers and personal computers, he says, will both be reshaped by it. He takes a shot at Microsoft along the way: good thing network technology is not owned by a company that _does not innovate_. He even predicts that the network will become an important medium for social life.
 
-今天，2012年，事實證明，Facebook/Twitter，
+Today, in 2012, Facebook and Twitter — and later Apple's AirPrint — still developed inside that field of view. Hard not to respect the foresight.
 
-到後來Apple的 Air Print 都仍然是在他的視野內發展，真的不得不佩服他的先知灼見。
-
-順手打打心得居然三點多了… 剩下想到再補上…
+I sat down to jot a few thoughts and it is past 3am. I will add the rest when it comes back.

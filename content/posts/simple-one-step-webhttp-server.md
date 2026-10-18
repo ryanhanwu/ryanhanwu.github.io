@@ -2,7 +2,7 @@
 title: "Simple one-step web(http) Server"
 description: "We all know Mac OS has a powerful sharing feature called AirDrop, but it too simple to share to multiple users. Sometimes we really need a simple web..."
 publishDate: "2012-09-22T06:36:00.000Z"
-tags: ["node-js","http","tools"]
+tags: ["node-js", "http", "tools", "server", "tooling"]
 ---
 
 We all know Mac OS has a powerful sharing feature called AirDrop, but it too simple to share to multiple users. Sometimes we really need a simple web server for sharing our static resource, For instance,  HTML file, simple folder,  or some multimedia files.  
