@@ -1,42 +1,40 @@
 ---
-title: "取得中華電信(Hinet)光世代Wifi基地台內的密碼"
-description: "最近申辦了中華電信光世代50M/10M，並且申請了免費附贈的Wifi。"
+title: "Finding the Password Inside a Chunghwa Telecom HiNet Fiber Wi-Fi Router"
+description: "The HiNet fiber Wi-Fi router shipped a WBR-2200 with a mysterious wifi.hinet.net account. The password was sitting in the page source."
 publishDate: "2013-04-04T06:08:02.000Z"
-tags: ["hack","life"]
+tags: ["hack", "life", "wifi", "networking", "router"]
 ---
 
-最近申辦了中華電信光世代50M/10M，並且申請了免費附贈的Wifi。
+I recently signed up for Chunghwa Telecom HiNet fiber at 50M/10M, and took the free Wi-Fi that comes with it.
 
-拿到的機器是D-Link 的 **WBR-2200**
+The box is a D-Link **WBR-2200**.
 
-剛剛參考一些[網路上的文章](http://briian.com/?p=4756)，把固定IP申請好，連入基地台
+I followed a few [posts online](http://briian.com/?p=4756), applied for a fixed IP, and logged into the router.
 
--   連入基地台的方法
-    
-    ```plain
-    Normal User：user/user
-    Super User：cht/chtap
-    ```
-    
-
-卻發現裡面有一個神祕的帳號：[xxxxxxxx@wifi.hinet.net](mailto:xxxxxxxx@wifi.hinet.net) ?!
-
-找了一下[Mobile01](http://www.mobile01.com/topicdetail.php?f=110&t=2317597&p=1)，這一組帳號的密碼，居然要打電話自己去跟中華電信要…… orz  
-礙於懶得打電話，就只好靠自己來。
-
-步驟1.  
-我用的是谷歌(Chrome)瀏覽器，對這密碼欄位點選右鍵(Right Click)，然後選檢查元素(Inspect Element)。
-
-然後就會看到在跳出的視窗中，有著以下類似的東西…
+- How to log in
 
 ```plain
+Normal User: user/user
+Super User: cht/chtap
+```
+
+Inside there is a mysterious account: [xxxxxxxx@wifi.hinet.net](mailto:xxxxxxxx@wifi.hinet.net).
+
+A thread on [Mobile01](http://www.mobile01.com/topicdetail.php?f=110&t=2317597&p=1) says you have to call Chunghwa Telecom and ask them for that password. I did not feel like calling, so I did it myself.
+
+Step 1.  
+I was in Chrome. Right-click the password field and choose Inspect Element.
+
+In the panel that opens you get something like this:
+
+```html
 <input value="123456" />
 ```
 
-我想這個號碼應該可能大概不是那個密碼，就把它複製下來試試看，
+I figured that number was probably not the password, copied it, and tried it anyway.
 
-接下來… 如有雷同純屬巧合。
+What happened next was a coincidence, if it looked like one.
 
-謝謝。
+Thanks.
 
-\_可能\_僅適用於Hinet(中華電信)光世代附贈的家用Wi-Fi機器 **WBR-2200**
+_Probably_ only applies to the home Wi-Fi unit bundled with HiNet fiber, the **WBR-2200**.

@@ -2,7 +2,7 @@
 title: "iOS Developer Enterprise Program How To"
 description: "!http://3.bp.blogspot.com/-kXHEC3uRLog/UEl9KnpbIBI/AAAAAAAAB8Q/H6RlKboTQrM/s320/shakinghands.pnghttp://3.bp.blogspot.com/-kXHEC3uRLog/UEl9KnpbIBI/AAAA..."
 publishDate: "2012-09-07T17:03:00.000Z"
-tags: ["ios","apple","shared"]
+tags: ["ios", "apple", "shared", "enterprise", "distribution"]
 ---
 
 [![](http://3.bp.blogspot.com/-kXHEC3uRLog/UEl9KnpbIBI/AAAAAAAAB8Q/H6RlKboTQrM/s320/shaking_hands.png)](http://3.bp.blogspot.com/-kXHEC3uRLog/UEl9KnpbIBI/AAAAAAAAB8Q/H6RlKboTQrM/s1600/shaking_hands.png)

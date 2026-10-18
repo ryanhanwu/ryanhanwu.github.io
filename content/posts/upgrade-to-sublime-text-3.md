@@ -2,7 +2,7 @@
 title: "Upgrade to Sublime Text 3"
 description: "Moved all my settings and snippets from Sublime Text 2 to 3, the Sublimelinterhttp://www.sublimelinter.com/ is much better, especially for a Node.js d..."
 publishDate: "2014-10-08T15:16:15.000Z"
-tags: ["sublime-text","editor","shared"]
+tags: ["sublime-text", "editor", "shared", "tooling", "productivity"]
 ---
 
 Moved all my settings and snippets from Sublime Text 2 to 3, the [Sublimelinter](http://www.sublimelinter.com/) is much better, especially for a Node.js developer.

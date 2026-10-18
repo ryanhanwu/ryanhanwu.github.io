@@ -2,7 +2,7 @@
 title: "Best way of singleton in Objective-C"
 description: "It’s very useful during iOS development"
 publishDate: "2013-07-01T04:46:39.000Z"
-tags: ["ios","singleton","design-pattern","coding"]
+tags: ["ios", "singleton", "design-pattern", "coding", "objective-c"]
 ---
 
 It’s very useful during iOS development

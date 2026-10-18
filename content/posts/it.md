@@ -1,63 +1,56 @@
 ---
-title: "為什麼IT公司需要行銷人員?"
-description: "我知道全世界只有10種人, 一種是懂Binary的, 一種是不懂的"
+title: "Why Does an IT Company Need Marketers?"
+description: "A developer's notes on a post about marketing and community: without them you ship into a vacuum, and the plan belongs in the budget from day zero."
 publishDate: "2012-02-13T04:28:01.000Z"
-tags: ["marketing"]
+tags: ["marketing", "community", "product", "startup", "engineering"]
 ---
 
-> **我知道全世界只有10種人, 一種是懂Binary的, 一種是不懂的**
+> **There are only 10 kinds of people in the world: those who understand binary, and those who don't.**
 
-台灣的開發者/程式設計師, 素質好, 薪水不高. 這點是有目共睹的優秀(?)狀況.
+Taiwan's developers are good, and not paid like it. That much is obvious, for better or worse.
 
-看到一篇[文章](http://talkweb.eu/openweb/1142)在探討行銷人員的存在目的, 就做個翻譯當紀錄.　
+I read a [piece](http://talkweb.eu/openweb/1142) on why marketers exist, and translated it here as a note to myself.
 
-警惕一下不誤正業半調子的我
+A warning to the half-serious version of me that keeps wandering off the work.
 
-**如果沒有那些Marketing的傢伙:**
+**If those marketing people were not around:**
 
-1.  更少人會知道我們 : 包括了我們的客戶 && 朋友 && Google上循線而來的人們
-    
-2.  **extends** 1 = 更少的花費~(俗稱Cost Down)~
-    
-3.  **implement** 2 = 開發者薪水可以＋＋
-    
-4.  不用給獎金 (或稱Commission, 回扣, 業務獎勵…)  NOR 我正好”**收到一封邀請**“, 希望我去一間有優秀行銷團隊的公司工作
-    
-5.  R.I.P GPWGFTCCW - 別說什麼擁有好功能的好產品可以改變世界  
-    _Great Product with great functionalities that can change the world._
-    
+1. Fewer people would know we exist: customers, friends, and whoever follows a trail in from Google.
+2. **extends** 1 = less spending. _(Commonly known as cost down.)_
+3. **implement** 2 = developer salaries can go `++`.
+4. No bonuses (also called commission, kickbacks, sales incentives…) NOR the moment I happen to **"get an invitation"** to join a company with a strong marketing team.
+5. R.I.P. GPWGFTCCW — stop saying a good product with good features can change the world.  
+   _Great product with great functionalities that can change the world._
 
-**如果沒有那些社群管理員(或者相關的社群管理策略）**
+**If there were no community managers (or any community strategy):**
 
-1.  **沒有**社群擁護我們 = 我們必須**“用盡所有可能”**自己測試我們所有產品  
-    以網頁內容管理系統為例, 從功能測試, 模組相容測試到網頁使用這測試, 流覽器相容測試　都自己來.  
-    養一個QA Team應該比較快 - 但是很貴 ![Smile](http://lh3.ggpht.com/-qUyjLi5ZBM8/TzfaqKQ3__I/AAAAAAAABn4/6keiqzzQfb8/wlEmoticon-smile%25255B2%25255D.png?imgmax=800)
-    
-2.  沒有**社群**擁護我們 = 要怎麼知道改怎麼改善?又或者知道客戶的需求? 　  
-    如果不是熱情的社群提供大量意見供篩選, 而是靠著少數客戶的意見想法作產品決策,  
-    那跟**作外包接案**有什麼不同???
-    
-3.  沒有社群**擁護**我們 = 怎麼獲得下一個新產品的好點子?  
-    創業圈很愛說”怎麼滿足使用者的需求”, 沒有人告訴你, 只能問天了.
-    
-4.  沒有社群擁護**我們** \= 怎麼找到有人可以告訴你　“你他Ｘ的**錯**了”  
-    懸崖勒馬, 亡羊補牢其實有時候有用. 但往往都是洗頭洗一半將錯就錯.
-    
-5.  **沒有社群擁護我們** \= 怎麼找到有人可以幫你寫詳細的文件 /  抓Bug / 分享產品的喜悅 / 甚至鼓勵你
-    
+1. **No** community behind us = we have to test every product **"by every means available,"** ourselves.  
+   Take a web CMS. Feature tests, module compatibility, real-user tests, browser compatibility — all on us.  
+   Hiring a QA team would be faster. It is also expensive. ![Smile](http://lh3.ggpht.com/-qUyjLi5ZBM8/TzfaqKQ3__I/AAAAAAAABn4/6keiqzzQfb8/wlEmoticon-smile%25255B2%25255D.png?imgmax=800)
 
-> 唉呦不錯喔！我喜歡你們的產品
+2. No **community** behind us = how do you know what to improve, or what customers actually need?  
+   If a passionate community is not feeding you a pile of opinions to sort through, and product decisions ride on a handful of customer comments, how is that different from **taking outsourcing work**?
 
-原文最下面附上這句話
+3. No community **behind** us = where does the next product idea come from?  
+   Startup circles love "meet the user's needs." Nobody tells you how. You can ask the sky.
 
-\*\_ I am so sorry, but someone should change the ordered list to start from 0/zero/. Starting from 1 is so lame.\_
+4. No community behind **us** = who is going to tell you that you are **wrong**?  
+   Pulling back from the cliff, or mending the fence after the sheep are gone, sometimes works. More often you are halfway through washing your hair and decide to commit to the mistake.
 
-翻譯 - 我很抱歉, 但是有人應該把上面的清單改成從0開始. 從1開始很鳥.
+5. **No community behind us** = who writes the detailed docs, files the bugs, shares the joy of the product, or even cheers you on?
 
-看到這句話, 我的認知除了身為ＲＤ的老梗以外,
+> Hey, not bad! I like your product.
 
-這句話其實深深暗喻　：　**行銷/社群的計畫策略, 就算不在一開始投入預算, 也該列入計畫中.**
+The original ends with this:
 
-總結
+\*_I am so sorry, but someone should change the ordered list to start from 0/zero/. Starting from 1 is so lame._
 
-**Stay focus ,Go to marketing, listen to users, evaluate feedback, keep improving/shipping**
+Translation: sorry, but someone should make that list start at 0. Starting at 1 is lame.
+
+Reading that, the obvious take is the old developer joke.
+
+Under it, the line is doing more work: **a marketing and community plan belongs in the plan even if you do not fund it on day one.**
+
+To sum up:
+
+**Stay focused, go to marketing, listen to users, evaluate feedback, keep improving and shipping.**

@@ -2,7 +2,7 @@
 title: "Upgrade to Hexo 3"
 description: "I’ve use Hexohttp://hexo.io for a while and deply my blog on Github. Upgrade to Hexo 3 is extremely simple."
 publishDate: "2015-03-20T15:32:16.000Z"
-tags: []
+tags: ["hexo", "node-js", "blogging", "tooling", "engineering"]
 ---
 
 I’ve use [Hexo](http://hexo.io) for a while and deply my blog on Github. Upgrade to Hexo 3 is extremely simple.

@@ -2,7 +2,7 @@
 title: "Make UILabel glow"
 description: "You have to import QuartzCore"
 publishDate: "2013-06-30T05:24:52.000Z"
-tags: ["ios","uilabel","coding"]
+tags: ["ios", "uilabel", "coding", "objective-c", "ui"]
 ---
 
 You have to import QuartzCore

@@ -1,31 +1,40 @@
 ---
-title: "在ViewController 之間傳值"
-description: "在iOS的開發中，我們經常會使用ViewController來控制每一個畫面的行為，   剛開始的時候最常遇到的問題就是"
+title: "Passing Values Between ViewControllers"
+description: "The first iOS question is usually how two ViewControllers share data. Pass it through the instance for a one-off, or through a singleton when the whole app needs it."
 publishDate: "2012-10-03T20:21:00.000Z"
-tags: ["ios","singleton","objective-c","coding"]
+tags: ["ios", "singleton", "objective-c", "coding", "architecture"]
 ---
 
-在iOS的開發中，我們經常會使用ViewController來控制每一個畫面的行為，  
-剛開始的時候最常遇到的問題就是  
+In iOS development we use a ViewController to own the behavior of each screen.
 
-> **“怎麼在兩個ViewController之間傳遞資訊”**這篇文章中我列出了幾種常見的方法，提供給大家做參考。
+The first problem is usually this:
 
-**1\. 透過實體(Instance)傳遞資訊**
+> **"How do I pass information between two ViewControllers?"**
+
+Here are a few common ways.
+
+**1. Pass information through the instance**
 
 [![](http://1.bp.blogspot.com/-ocnOnGCizSQ/UGvhI2puHwI/AAAAAAAACTs/xUYMOv9FN9Y/s640/blog1-1.png)](http://1.bp.blogspot.com/-ocnOnGCizSQ/UGvhI2puHwI/AAAAAAAACTs/xUYMOv9FN9Y/s1600/blog1-1.png)
 
-我們都知道，每一個ViewController 的類別(Class)，不管是用Storyboard還是Nib的方式，都要先初始化(alloc + init)，然後再透過這些**實體(Instance)**物件做操作。所以，要在彼此之間傳遞資訊，必須要取得這些**實體**。
+Every ViewController class, whether it comes from a Storyboard or a nib, has to be initialized (`alloc` + `init`) before you can work with the **instance**. To pass information between them, you need those instances.
 
-如果傳遞的資訊比較簡單，或是傳遞資訊的動作只有一次的時候，透過物件的實體是比較簡單的方式
+When the payload is simple, or you only pass it once, going through the object instance is the simpler path.
 
-#### 範例A： 透過 Nib 的方式，取得ViewController2 的實體，傳遞資訊，指定user的值
+#### Example A: from a nib, get the ViewController2 instance and set `user`
 
 <script src="https://gist.github.com/3825488.js?file=ViewController1.m"></script>
 
-#### 範例B：在StoryBoard中，透過Segue 取得的實體，傳遞資訊，指定user的值
+#### Example B: in a Storyboard, use the instance from the segue and set `user`
 
-<script src="https://gist.github.com/3825531.js?file=ViewController1.m"></script>\*\*2.透過單例(Singleton)物件傳遞\*\* 透過物件的實體來傳遞固然很方便，但是很多時候，資訊的共享並不只存在於兩個ViewController之間，例如這個應用程式的作者資訊、目前登入者的暫存資料等等，應該是在一個共通的地方，每個人都是去同一個地方存取共通的資訊。這時我們就可以透過Singleton的方式，讓資訊傳遞更簡單。
+<script src="https://gist.github.com/3825531.js?file=ViewController1.m"></script>
 
-\[!\[\](http://3.bp.blogspot.com/-\_ivnC4oFHjU/UGvy1U3Z79I/AAAAAAAACUM/3HjhOjMIaxg/s640/blog2.png)\](http://3.bp.blogspot.com/-\_ivnC4oFHjU/UGvy1U3Z79I/AAAAAAAACUM/3HjhOjMIaxg/s1600/blog2.png)
+**2. Pass information through a singleton**
 
-以下是範例程式碼<script src="https://gist.github.com/3825767.js"></script>
+Passing through an instance is convenient, but shared information often lives beyond two ViewControllers. The app author's info, or the current user's cached data, belongs in one common place that everyone reads and writes. A singleton makes that simpler.
+
+[![Singleton](http://3.bp.blogspot.com/-_ivnC4oFHjU/UGvy1U3Z79I/AAAAAAAACUM/3HjhOjMIaxg/s640/blog2.png)](http://3.bp.blogspot.com/-_ivnC4oFHjU/UGvy1U3Z79I/AAAAAAAACUM/3HjhOjMIaxg/s1600/blog2.png)
+
+Sample code:
+
+<script src="https://gist.github.com/3825767.js"></script>

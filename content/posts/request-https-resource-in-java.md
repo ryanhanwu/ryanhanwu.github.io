@@ -2,7 +2,7 @@
 title: "Request Https resource in Java"
 description: "This article is about how to request resource from an HTTPS resource. e.g. https://a.b.c.d/test-metadata.xmlhttps://a.b.c.d/test-metadata.xml"
 publishDate: "2012-03-05T06:06:31.000Z"
-tags: ["java","https","basic-auth","coding"]
+tags: ["java", "https", "basic-auth", "coding", "security"]
 ---
 
 This article is about how to request resource from an **HTTPS** resource. e.g. [https://a.b.c.d/test-metadata.xml](https://a.b.c.d/test-metadata.xml)

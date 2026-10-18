@@ -1,59 +1,63 @@
 ---
-title: "談創業家與專業經理人"
-description: "這是今天在Twitter上回應了@Deducehttp://twitter.com/!/deduce大大的一段話"
+title: "On Entrepreneurs and Professional Managers"
+description: "Entrepreneurs and professional managers overlap more than the labels suggest. The real gap is how each one lives with uncertainty."
 publishDate: "2012-02-25T04:28:01.000Z"
-tags: ["entrepreneur","manager","entrepreneurship"]
+tags: ["entrepreneur", "manager", "entrepreneurship", "leadership", "culture"]
 ---
 
-這是今天在Twitter上回應了[@Deduce](http://twitter.com/#!/deduce)大大的一段話
+This started as a reply on Twitter to [@Deduce](http://twitter.com/#!/deduce):
 
-> 我覺得專業經理人跟創業家有很大的相似點, 只是喜歡的生活型態不同罷了.
+> I think professional managers and entrepreneurs have a lot in common. They just prefer different ways of living.
 
-這樣講或許有點草率，不過專業經理人和創業家的異同，其實在很多地方都有這類的討論
+That is a bit hasty. The similarities and differences between professional managers and entrepreneurs have been argued in plenty of places.
 
-**到底這兩者差在哪?**
+**So where do the two actually differ?**
 
-下圖為 [孫易新心智圖法](http://www.mindmapping.com.tw) 網站彙整EMBA雜誌第295期文章”[創業家和專業經理人有何不同](http://mag.chinatimes.com/mag-cnt.aspx?artid=7054)”所得到的心智圖[![](/images/20120224_110304.png)](/images/20120224_110304.png)
+The mind map below comes from the [Sun Yi-hsin mind mapping](http://www.mindmapping.com.tw) site, summarizing EMBA Magazine issue 295, "[How Are Entrepreneurs and Professional Managers Different?](http://mag.chinatimes.com/mag-cnt.aspx?artid=7054)".
 
-中午吃飯時順口問了同事對於這兩者之間的看法.
+[![](/images/20120224_110304.png)](/images/20120224_110304.png)
 
-[TonyQ](http://plurk.com/tonyq):字不一樣(當場毆飛)
+At lunch I asked coworkers what they thought.
 
-[Ian](http://zanyking.blogspot.com/)覺得這兩者的驅動(Driven)不同, 專業經理人是透過指標(例如股價,效率,收入)來驅動, 創業家是透過目標(創造更好的Todo List, 雲端筆記本, 社群互動…)來驅動. (簡言之:Different motivation)。
+[TonyQ](http://plurk.com/tonyq): the words are different. (Immediately thrown out of the conversation.)
 
-這兩者在現今社會也有著非常不同的印象
+[Ian](http://zanyking.blogspot.com/) thinks the driver is different. A professional manager is driven by metrics (stock price, efficiency, revenue). An entrepreneur is driven by a goal (a better todo list, a cloud notebook, social interaction). In short: different motivation.
 
--   專業經理人 : 普遍認知為**妥善運用目前資源追求極大利益者**
--   創業家 : 普遍認知為**尋求偉大夢想的實踐者**
+The two also carry very different reputations today.
 
-加上在**執行層面**上來說，這兩者的確有非常大的**重疊**. 甚至有非常多的例子是從專業經理人成了創業家，從[創業家到執行長](http://findbook.tw/book/9789867969217/basic)。所以不論是企業管理研究或是創業圈都對這兩者有許許多多的討論與分析。  
-好多年前在BBS上有轉錄一篇文章, 叫做”**天生注定當老闆**”(剛剛Google找不到原文…只有許多[轉載與片段](http://tw.myblog.yahoo.com/bluesir30/article?mid=333&prev=334&l=f&fid=6))  
-其中提到的創業家特質，很大一部分跟專業經理人所必須具備的特質是一樣的。不過其中也提到創業家與專業經理人天生性格上最大的鴻溝是**對於不可測及不確定變數的容忍** (簡言之就是對於風險的容忍程度。)
+- Professional manager: generally seen as **someone who uses the resources on hand to maximize returns**
+- Entrepreneur: generally seen as **someone chasing a large dream into existence**
 
-用一個比喻來說，這兩者就像從不同的登山口，穿戴類似的裝備兩個登山者，不論面對颳風下雨都有著堅忍不拔的毅力，但面對每一個突發狀況的處理方式卻不完全相同。
+On the **execution** side, the overlap is huge. Plenty of people go from professional manager to entrepreneur, and from [entrepreneur to CEO](http://findbook.tw/book/9789867969217/basic). Both management research and startup circles have spent a lot of time on the comparison.
 
-**身為一個創業家需不需要有專業經理人的思維呢 ?**
+Years ago a BBS post made the rounds titled **"Born to Be the Boss"** (I could not find the original on Google just now — only [reposts and fragments](http://tw.myblog.yahoo.com/bluesir30/article?mid=333&prev=334&l=f&fid=6)).
 
-許多巨型企業(如IBM, Manpower)都有一個制度，就是把較為成熟的產品部門或技術團隊，切出去當成Branch。整個Branch的五管(包含支出與收入)都獨立運作責任自付。這造就出了許多十八般武藝樣樣精通的專業領導人才，若這些人離開後，踏上創業路，也往往都能建立起自己的一片天。
+A large share of the entrepreneurial traits it lists are the same traits a professional manager needs. The biggest innate gap it calls out is **tolerance for the unpredictable and the uncertain**. In short, tolerance for risk.
 
-剛剛在翻舊文時從我的Evernote發現一篇之前有意思的文章 [「專業經理人」比「創業家老闆」更愛錢？](http://www.managertoday.com.tw/?p=2299)其中談到非金錢動機在進場與退場行為中扮演的角色**.** 這篇文章提供了幾個假設供需要了解分析一間公司的人做參考
+Picture two climbers starting from different trailheads, wearing similar gear. Both have the stubbornness to keep going through wind and rain. They do not handle every surprise the same way.
+
+**Does an entrepreneur need a professional manager's way of thinking?**
+
+A lot of large companies (IBM, Manpower) have a system that spins a mature product group or technical team out as a branch. That branch runs its own books — spending and revenue — and owns the result. It produces leaders who can do a bit of everything. When those people leave and start companies, they often build something of their own.
+
+Digging through old notes in Evernote, I found ["Do Professional Managers Love Money More Than Entrepreneur-Owners?"](http://www.managertoday.com.tw/?p=2299). It looks at the role non-monetary motives play in entering and exiting a market. The piece offers a few hypotheses for anyone trying to read a company:
 
 [![ec](/images/20120224_lev.png)](/images/20120224_lev.png)
 
-其中提出三個假設
+Three of them:
 
-1.  在由專業經理人所掌管的公司裡，「市場經濟吸引力」與「進場可能性」呈正相關的可能性，大於由所有人管理的公司。
-2.  由專業經理人管控的公司，比起由企業所有人身兼經理人的公司，更有可能因為經濟誘因愈小，而提高退出市場的可能性。
-3.  在由專業經理人所管理的公司裡，「市場經濟吸引力」與「公司價格」兩者之間的正向關係，比起在由所有人管理的公司裡更為強烈。
+1. In a company run by professional managers, "market attractiveness" and "likelihood of entering" are more likely to be positively correlated than in a company run by its owners.
+2. A company controlled by professional managers is more likely than one where the owner is also the manager to raise its chance of exiting as the economic incentive shrinks.
+3. In a company run by professional managers, the positive relationship between "market attractiveness" and "company price" is stronger than in a company run by its owners.
 
-在所謂**浪頭上的產業**(白話:市場熱錢的聚集處)，只有極少部分的公司是由所謂的專業經理人管理。排除企業導師等等的外部協助，身為一個資訊創業者，除了從做中學之外，對於專業經理人的思維與管理態度也必須要有一定程度的狩獵(最常見的切入點是行銷，專案管理，與人力資源管理)，否則就算募了一大筆錢或是擁有很好的Business Model，也很有可能被時代的潮流淹沒。
+In a **hot industry** (plainly: where the market's money is piling up), very few companies are run by so-called professional managers. Set aside outside help such as mentors. If you are building a software company, learning by doing is not enough. You also have to hunt down how professional managers think and manage. The usual entry points are marketing, project management, and people management. Otherwise, even with a large raise or a solid business model, the current can still take you under.
 
-**去創業好還是去當專業經理人好?**
+**Start a company, or become a professional manager?**
 
-隨著Diablo 3 即將發行，用這張D2圖來解釋最合理也不過
+With Diablo 3 about to ship, this Diablo 2 skill tree is the most reasonable explanation I have:
 
 [![skill](/images/20120224_skill.jpg)](/images/20120224_skill.jpg)
 
-這世界上本來就沒有所謂完美的Career Path, **你想玩什麼就玩什麼**，如果現階段的環境無法達到滿足或讓你覺得生活無趣，那代表你需要一點改變了。上述提到的創業家的特質與中山大學創意管理教授劉常勇提出的[10D](http://www.inex.twmail.net/temp/p01/175.htm)是很可以參考的指標。
+There is no perfect career path. **Play what you want to play.** If the current setup cannot satisfy you, or life feels dull, you need a change. The entrepreneurial traits above, and the [10D](http://www.inex.twmail.net/temp/p01/175.htm) framework from National Sun Yat-sen University creativity-management professor Liu Chang-yong, are useful reference points.
 
-基本上，累積自己的價值(點技能)都不會有壞處，但是在有限的資源(例如時間)內如何將這些技能在正確的時間發揮，就是每一個人都需要好好思考的了。
+Stacking your own value (putting points into skills) is rarely a bad idea. The part everyone has to think through is how to spend those skills at the right time, inside limited resources such as time.

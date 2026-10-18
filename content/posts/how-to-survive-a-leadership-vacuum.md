@@ -2,7 +2,7 @@
 title: "How to survive a leadership vacuum?"
 description: "What are leadership and a leadership vacuum?"
 publishDate: "2019-08-19T18:32:16.000Z"
-tags: []
+tags: ["leadership", "management", "culture", "engineering", "career"]
 ---
 
 ### What are leadership and a leadership vacuum?

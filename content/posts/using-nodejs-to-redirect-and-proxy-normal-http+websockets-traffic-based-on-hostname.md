@@ -2,7 +2,7 @@
 title: "Using Node.js to redirect and proxy normal HTTP+WebSocket traffics based on hostnames"
 description: "Usually I used to use a single server to host several developing or experimental projects. Thus I need a quick solution to forward different request t..."
 publishDate: "2013-07-19T05:23:46.000Z"
-tags: ["node-js","proxy","redirect","websocket","coding"]
+tags: ["node-js", "proxy", "redirect", "websocket", "coding"]
 ---
 
 Usually I used to use a single server to host several developing or experimental projects. Thus I need a quick solution to forward different request to these services. I had tried to use [nginx](http://nginx.org/) before. But now I have a easier way to do so.
