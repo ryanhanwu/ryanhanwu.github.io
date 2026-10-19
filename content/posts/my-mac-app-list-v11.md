@@ -27,7 +27,7 @@ Updated the software list. Anything marked with \* wants money before it is actu
 
 ### Development and editors
 
-- [Sublime Text](http://www.sublimetext.com/): my favorite plain-text editor. Settings are in [this post](http://blog.flyworld.me/2012/03/my-sublime-text-2-on-windows-7-64bit.html).
+- [Sublime Text](http://www.sublimetext.com/): my favorite plain-text editor. Settings are in [this post](https://ryanwu.me/posts/my-sublime-text-2-on-windows-7-64bit/).
 - [SmartGit](http://www.syntevo.com/smartgit/index.html): the best Git client I have used so far. SourceTree has wrecked a repo of mine.
 - [Evernote](http://evernote.com/): the notes app I actually use every day.
 - [HTTP Client](http://ditchnet.org/httpclient/): a visual way to fire HTTP requests. \*
