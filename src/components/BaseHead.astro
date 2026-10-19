@@ -16,6 +16,25 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 
 <meta charset="utf-8" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+{
+	import.meta.env.PROD && siteConfig.googleAnalyticsId && (
+		<>
+			{/* Google tag (gtag.js) */}
+			<script
+				async
+				is:inline
+				src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.googleAnalyticsId}`}
+			/>
+			<script
+				is:inline
+				set:html={`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${siteConfig.googleAnalyticsId}');`}
+			/>
+		</>
+	)
+}
 <title>{siteTitle}</title>
 
 {/* Icons */}

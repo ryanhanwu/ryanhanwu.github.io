@@ -4,9 +4,11 @@ export interface SiteConfig {
 		options: Intl.DateTimeFormatOptions;
 	};
 	description: string;
+	/** GA4 measurement ID. Injected by BaseHead on production builds. */
+	googleAnalyticsId?: string;
 	lang: string;
-  ogLocale: string;
-  showLogo: boolean;
+	ogLocale: string;
+	showLogo: boolean;
 	title: string;
 	url: string;
 }
