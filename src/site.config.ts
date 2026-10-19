@@ -15,6 +15,8 @@ export const siteConfig: SiteConfig = {
 	author: "Ryan Wu",
 	// Used as the default description meta property and webmanifest description
 	description: "I code and I know things",
+	// GA4 measurement ID, injected in src/components/BaseHead.astro on production builds
+	googleAnalyticsId: "G-KXM7RY0DDY",
 	// HTML lang property, found in src/layouts/Base.astro L:18 & astro.config.ts L:48
 	lang: "en",
 	// Meta property, found in src/components/BaseHead.astro L:42
