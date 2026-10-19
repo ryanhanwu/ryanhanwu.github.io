@@ -1,6 +1,6 @@
 # Ryan Wu's Blog
 
-[blog.ryanwu.me](https://blog.ryanwu.me/). Astro 7 static site on the
+[ryanwu.me](https://ryanwu.me/). Astro 7 static site on the
 [Cactus](https://github.com/chrismwilliams/astro-theme-cactus) theme.
 Content moved off Hexo. A push to `master` builds with npm and deploys
 to GitHub Pages.

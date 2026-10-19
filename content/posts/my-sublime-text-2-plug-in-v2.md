@@ -7,7 +7,7 @@ tags: ["editor", "sublime-text-2", "tools", "plugins", "productivity"]
 
 [Sublime Text 2](http://www.sublimetext.com/)  is one of my favorite plain text editor. It supports hundred of plugin(still growthing) with highly productivity features.
 
-I have listed my plugin on Windows 7 64bit in previous [post](http://blog.flyworld.me/2012/03/my-sublime-text-2-on-windows-7-64bit.html). This is the updated version of my [MacBook Air](http://blog.flyworld.me/2012/08/mac-app-widget-configure.html).
+I have listed my plugin on Windows 7 64bit in previous [post](https://ryanwu.me/posts/my-sublime-text-2-on-windows-7-64bit/). This is the updated version of my [MacBook Air](https://ryanwu.me/posts/mac-app-widget-configure/).
 
 **Productivity**
 
