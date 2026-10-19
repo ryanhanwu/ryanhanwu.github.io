@@ -1,0 +1,4 @@
+[submodule "agent-configs"]
+	path = agent-configs
+	url = https://github.com/ryanhanwu/agent-configs.git
+	branch = main
