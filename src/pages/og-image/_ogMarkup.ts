@@ -1,6 +1,8 @@
 import { html } from "satori-html";
 import { siteConfig } from "@/site.config";
 
+const siteHost = new URL(siteConfig.url).host;
+
 // OG image markup, use https://og-playground.vercel.app/ to design your own.
 export const ogMarkup = (title: string, pubDate: string) =>
 	html`<div tw="flex flex-col w-full h-full bg-[#121212] text-[#c9cacc] justify-between p-12">
@@ -10,6 +12,6 @@ export const ogMarkup = (title: string, pubDate: string) =>
 		</div>
 		<div tw="flex items-center justify-between w-full pt-8 border-t border-[#333333] text-white">
 			<p tw="text-2xl font-bold tracking-tight">${siteConfig.title}</p>
-			<p tw="text-xl text-[#888888] font-mono">blog.ryanwu.me</p>
+			<p tw="text-xl text-[#888888] font-mono">${siteHost}</p>
 		</div>
 	</div>`;
