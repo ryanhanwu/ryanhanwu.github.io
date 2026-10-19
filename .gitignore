@@ -23,7 +23,12 @@ pnpm-debug.log*
 *.pem
 .cache
 .astro
-.cursor/
+# Local Cursor state. Shared instructions are the agent-configs submodule.
+.cursor/*
+!.cursor/environment.json
+!.cursor/rules/
+.cursor/rules/*
+!.cursor/rules/content-research-writer.mdc
 .gemini/
 # private agent instructions (kept in ryanhanwu/agent-configs)
 GEMINI.md
