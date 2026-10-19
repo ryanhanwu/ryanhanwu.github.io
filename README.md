@@ -25,11 +25,8 @@ Nav is Home, Blog, About. Notes and tags are linked from the pages.
 
 ## Run it
 
-GitHub Actions uses Node 22. `.nvmrc` is 24, which is fine on a laptop.
-
-Use npm. `deploy.yml` runs `npm ci` against `package-lock.json`.
-`ci.yml` uses pnpm, and it only runs on `main`. The default branch is
-`master`, so the lockfile that ships is npm's.
+Use npm and `package-lock.json`. GitHub Actions uses Node 22.
+`.nvmrc` is 24 for local use.
 
 ```bash
 npm install
@@ -135,12 +132,14 @@ npm run build
 2. `scripts/generate-redirects.js` writes a static HTML redirect for
    each old Hexo URL.
 
-`.github/workflows/deploy.yml` runs that on push to `master` or `main`
-(Node 22, `npm ci`) and uploads `dist/` to GitHub Pages. The domain is
-`public/CNAME`.
+`.github/workflows/deploy.yml` runs on pull requests and on pushes to
+`master`. It installs with `npm ci` on Node 22, runs `astro check`, then
+`npm run build`. Pushes and manual runs upload `dist/` to GitHub Pages.
+Pull requests stop after the build. The domain is `public/CNAME`.
 
-`.github/workflows/ci.yml` typechecks and builds with pnpm, on `main`
-only. A push to `master` deploys without that workflow.
+GitHub Pages is still set to build the `master` branch with Jekyll, and
+that run fails on every push. The site that publishes is the Actions
+deploy above. Set Pages → Source to GitHub Actions to stop the Jekyll run.
 
 Legacy redirects are edited in `scripts/generate-redirects.js`. That is
 the file the build runs. `src/redirects.ts` holds the same map and
@@ -155,6 +154,9 @@ npm run check    # astro check && biome check
 npm run lint     # biome check --write
 npm run format   # prettier
 ```
+
+Actions runs `astro check` before the production build. Biome still
+reports existing issues, so it stays a local check.
 
 ## Webmentions
 
