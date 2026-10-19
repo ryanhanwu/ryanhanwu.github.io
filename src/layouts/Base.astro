@@ -9,13 +9,10 @@ import type { SiteMeta } from "@/types";
 
 interface Props {
 	meta: SiteMeta;
-	/** Blog posts opt in so the desktop column can sit beside the table of contents. */
-	wide?: boolean;
 }
 
 const {
 	meta: { articleDate, description = siteConfig.description, ogImage, title },
-	wide = false,
 } = Astro.props;
 ---
 
@@ -24,12 +21,7 @@ const {
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 		<ThemeProvider />
 	</head>
-	<body
-		class:list={[
-			"bg-global-bg text-global-text mx-auto flex min-h-screen max-w-3xl flex-col px-4 pt-16 font-mono text-sm font-normal antialiased sm:px-8",
-			wide && "lg:max-w-6xl",
-		]}
-	>
+	<body class="bg-global-bg text-global-text mx-auto flex min-h-screen max-w-3xl flex-col px-4 pt-16 font-mono text-sm font-normal antialiased sm:px-8 lg:max-w-6xl">
 		<SkipLink />
 		<Header />
 		<main id="main">
