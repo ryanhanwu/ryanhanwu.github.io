@@ -26,7 +26,9 @@ Three constraints determine whether a selected check is worth trusting.
 
 **Observability.** Record the claim, the command, the output, and the portion of the claim the check did not cover. A later reader uses that record to distinguish a pass from a skipped step. A screenshot of the finished screen shows that a page rendered. Attached to a behavioral run, the image is part of the record. On its own, the image does not show that Submit was clicked.
 
-The constraints compete. A browser run with a saved trace can catch wiring bugs, and it costs enough that the retry loop avoids it whenever a cheaper command is available. Select the cheapest check that can still fail the claim, and retain the command and the output.
+The constraints compete. A browser run with a saved trace can catch a broken click path, and it costs enough that the agent will pick a cheaper command whenever one exists. Select the cheapest check that can still fail the claim, and retain the command and the output.
+
+The inner loop is the checks the agent runs before it reports the change done. It has a time box: about two minutes with no browser, or a few minutes more for one broader check. Continuous integration runs after that.
 
 ### Match the suite to the claim
 
@@ -43,41 +45,51 @@ A mock and a traffic replay are both fixtures. A mock specifies the collaborator
 
 ### Selection procedure
 
-Make the selection with path rules and the existing test runner. A model asked to survey the whole suite spends the budget on reading, then selects whichever command is easiest to turn green.
+Make the selection with the repo's selection rule and the existing test runner. The rule is a build graph where one exists, and a path map otherwise. A model asked to survey the whole suite spends the budget on reading, then selects whichever command is easiest to turn green.
 
 1. Write the claim in one sentence, from the task, before inspecting a passing result.
-2. Classify the diff from its paths: logic, a boundary, persisted data, an external contract, UI behavior, appearance, or config.
-3. Run the cheapest existing suite that covers that surface. With a build graph, that suite is every impacted test target. Affected tests from the graph beat a command the model invents.
-4. Escalate once, and only for the part of the claim the first check cannot see. Cap the escalation at one extra run.
+2. Classify the diff: logic, a boundary, persisted data, an external contract, UI behavior, appearance, or config.
+3. Run the set the selection rule names, inside the time box. If the set does not fit, run the small tests first, send the overflow to CI, and record the split.
+4. Escalate once when that set cannot see part of the claim. Escalation means one broader check. Retry the same command only for an infra failure, and only once. If the broader check passes while the claim is still partly uncovered, or the broader check is inconclusive, write the gap in the record and stop.
 5. Add a test only when nothing already in the repository can fail the claim. Add one case, at the layer just selected, with the assertion taken from the requirement.
-6. Record what ran, how long it took, and which part of the claim remains uncovered.
+6. Attach four lines to the change: the claim, the command, the result, and the part still uncovered. A later rollback can be tied to the policy only when this record is on the change.
 
-Bound the inner loop. A logic change or a single boundary should finish within a couple of minutes, with no browser. One scripted browser path, or one replay, may take a few minutes more. The loop ends there. The broad end-to-end pack, the visual baselines, and the full replay corpus run in continuous integration.
+A logic change or a single boundary should finish within the two-minute box, with no browser. One broader check, a browser path or a replay, gets a few minutes more. The broad end-to-end pack, the visual baselines, and the full replay corpus run in CI.
 
-When two checks can both fail the claim, run the one more likely to fail if the change is wrong. Count runtime, the retries a flake will consume, and the tokens spent reading the log. If the check passes and part of the claim is still uncovered, spend the remaining budget on the next check.
+When two checks can both fail the claim, run the one more likely to fail if the change is wrong. Count runtime, the retries a flake will consume, and the tokens spent reading the log.
 
 ### Let the build graph choose the set
 
-A path map written by hand both over-selects and under-selects. `src/components` does not know which tests depend on the file that changed. A build graph does. Bazel is the common case. Buck2, Pants, Nx, and Turborepo's affected set are the same mechanism: changed files become targets, and the tests to run are the test targets that depend on them.
+A path prefix does not know which tests depend on a changed file. A build graph does.
 
-Run every test target in that set. The agent does not drop targets to save a minute. The set is already the tests that can see this diff, and thinning it is how a wiring bug ships behind a green unit test. Hermetic sandboxing is what makes the set safe to run: inputs are declared, the result does not depend on whatever the agent left in the workspace, and the same inputs fail the same way twice. A remote cache is what makes the set cheap. A cache hit means those inputs did not change. It is a skipped run, and the record should say so.
+Bazel is the strict case: dependencies are declared, and tests run in a sandbox. Most application repos are on Nx, Turborepo, or Gradle, which can still name an affected set from project dependencies. Ask the tool for that set:
 
-The graph does not see every claim. End-to-end paths, screenshots, and traffic replays often sit outside it, or they are too expensive to attach to every library change. When the claim is a user path, a visual change, or an external contract the graph does not encode, escalate once. `bazel test //...` on every edit still pays analysis, cache lookups, and unrelated flakes. The inner loop is the impacted targets. The full suite stays in CI.
+```text
+bazel query "rdeps(//..., set(//pkg:changed))"
+# or bazel-diff between the merge base and HEAD, filtered to test targets
+nx affected -t test
+```
 
-If a rollback lands while every impacted target was cached green, the graph is missing an edge, or the failure was outside it. Add the edge, or keep the one escalation. Leave the inner loop on the impacted set.
+Run the impacted targets that fit the time box. Do not drop a target because it looks slow. A change to a core library can impact thousands of targets, and that set will not finish in two minutes. Run the small tests in the set first, and let the remote cache skip targets whose inputs did not change. Hand the rest to CI. The record lists what ran, which results were cache hits, and what CI still has to run.
+
+A cache hit is a skipped run. It means those inputs did not change.
+
+A sandbox stops a test from reading files the target did not declare, so the result does not depend on whatever the agent left in the workspace. Timing, randomness, and races still flake inside that sandbox.
+
+End-to-end paths, screenshots, and traffic replays often have no edge from the changed target. Those claims use the one escalation above. `bazel test //...` is not the inner loop.
 
 ### Two changes
 
-A pricing rule changes in one module. The claim is: orders over $100 get 10% off, and the discount ignores shipping. The build graph names the test targets that depend on that module. Run all of them. An end-to-end checkout would fail the same claim later, at a higher cost per minute.
+A pricing rule changes in one module. The claim is: orders over $100 get 10% off, and the discount ignores shipping. The selection rule names the tests that depend on that module. Run the ones that fit the time box, and record any overflow. An end-to-end checkout would fail the same claim later, at a higher cost per minute.
 
-A Submit button is added on the settings page. The claim is: Submit adds a row and the empty state goes away. The impacted unit tests can pass while the button on the page calls nothing, because the page wiring is outside that graph. Escalate once. One scripted path clicks Submit, asserts the row, and saves the trace. The screenshot of the form is attached to that run.
+A Submit button is added on the settings page. The claim is: Submit adds a row and the empty state goes away. The button and its handler are in the graph. No impacted test clicks the button, so a unit test of the handler can pass while the page never calls it. Escalate once. One scripted path clicks Submit, asserts the row, and saves the trace. The screenshot of the form is attached to that run. If that path is inconclusive, record the gap and stop.
 
 ### Put this in the agent instructions
 
 The procedure above is the policy. Write it into the harness so the model follows it on the next task.
 
 1. Require a claim before any check runs. One sentence, taken from the task. Verification waits until that sentence is written down.
-2. Prefer the build graph. Run every impacted test target, and do not thin the set. Use a path map only when the repo has no graph. For a web repo, start here and replace the paths with your own:
+2. Use the selection rule. With a graph, run the impacted targets that fit the time box and record the overflow. Without one, use this path map and replace the paths with your own:
 
 ```text
 src/lib, src/domain          unit tests for the touched modules
@@ -87,47 +99,47 @@ styles, copy                 screenshot of the touched states
 schemas, generated clients   existing contract test or replay
 ```
 
-3. Set two time boxes. A logic change or one boundary gets about two minutes and no browser. One escalation, a browser path or a replay, gets a few minutes more. The full end-to-end pack, visual baselines, and the replay corpus stay in CI.
+3. Keep the time box. About two minutes and no browser for a logic change or one boundary. A few minutes more for one broader check. Anything that does not fit, including the full end-to-end pack, visual baselines, and the replay corpus, goes to CI and is named in the record.
 4. Run a test this change did not author. When no existing test can fail the claim, add one case and take the assertion from the claim. Say that in the record.
 5. Keep the fixture that was already in the repo when the diff does not modify that collaborator. A new mock belongs in the patch only when this change owns the logic and the collaborator is out of scope.
-6. Close with four lines: the claim, the command, the result, and the part of the claim still uncovered. Attach a screenshot to a behavioral run. A screenshot with no command is an image, not a result.
-7. Escalate once. If the first check cannot see the failure, run one broader check, save the output, and stop.
+6. Attach four lines to the change: the claim, the command, the result, and the part still uncovered. A screenshot with no command is an image, not a result.
+7. Broaden once. If that check is inconclusive, record the gap and stop.
 
 This is the block to paste:
 
 ```text
 Before reporting done:
 1. Write the claim in one sentence, from the task.
-2. Run every impacted test target from the build graph. If there is no graph, run the cheapest existing suite for the paths you changed.
-3. If that set cannot see the failure, escalate once.
-4. Report the claim, the command, the result, and what you did not check.
+2. Run the set the selection rule names, inside the time box. If it does not fit, run the small tests, send the rest to CI, and record the split.
+3. If that set cannot see part of the claim, run one broader check. If it is inconclusive, record the gap and stop.
+4. Attach four lines to the change: claim, command, result, and what you did not check.
 Use a fixture that already exists for any collaborator this diff did not change.
 Leave the full end-to-end pack, visual baselines, and replay corpus to CI.
 ```
 
 ### Read the system after it ships
 
-Judge the policy by what happens after merge. A green inner loop only says the selected check passed.
+Judge the policy by what happens after merge. A green inner loop only says the selected check passed. Tie a signal to that policy only when the four-line record is attached to the change. Without the record, you know the change failed in production and not which check ran.
 
-**Rollback.** The agent's check passed, and the change was reverted. Record the suite that ran and the failure production saw. When a unit test passed and the rollback was wiring or a contract mismatch, move that path up one level in the map.
+**Rollback.** The change was reverted. Read the attached record for the suite that ran and compare it with the failure production saw. When the record shows only unit tests and the failure was a click path or a contract mismatch, widen the selection rule one level. In a graph repo, add the missing edge. If the record shows every impacted target was a cache hit, the edge was missing, or the failure sat outside the graph.
 
-**P0.** A severe incident traces to a change the agent verified. Add the one case that would have failed, at the layer the map already assigns to those paths, and leave it in that suite. The next similar diff then fails inside the time box. Keep the full end-to-end pack in CI.
+**P0.** A P0 is a severe production incident: data loss, an outage, or a broken critical path that forces an immediate fix or rollback. When one traces to a change the agent verified, add the single case that would have failed, where the selection rule will keep selecting it. The next similar diff then fails inside the time box. The full end-to-end pack stays in CI.
 
-**Regression.** A behavior that used to work breaks, and the suite for those paths stayed green. The affected tests missed the module, or no test encoded the old behavior. Add the regression to the suite the map already names.
+**Regression.** A behavior that used to work breaks, and the selected set stayed green. The rule missed the module, or no test encoded the old behavior. Add the case to the suite the rule already names. If the graph had no edge to that module, add the edge.
 
 Two signals come from the loop itself, before an incident.
 
-**The agent edits the product until a check goes quiet.** The check is flaky. Remove it from the inner loop until it fails the same way twice. A retry loop will treat the flake as a product bug.
+**The agent edits the product until a check goes quiet.** The check is flaky. Remove it from the inner loop. Put it back only after two consecutive runs, with no product change between them, fail on the same assertion and the same failure message. A red result on a different assertion is a different failure. CI may keep running the check. The agent does not, until that pair of runs exists.
 
-**The first red result appears in CI, after the agent has stopped.** The inner loop selected a suite that could not fail the claim. Update the path map for that surface.
+**The first red result appears in CI, after the agent has stopped.** The selection rule did not include a check that could fail the claim. Widen the rule, or add the edge.
 
 | Signal | What failed in the policy | Change one rule |
 | --- | --- | --- |
-| Rollback | The suite that ran could not see the production failure | Move that path up one level |
-| P0 | No case covered a severe failure | Add one case at the current layer |
-| Regression | An old behavior was not selected, or not encoded | Add the case to the mapped suite |
-| Flake chased to green | The check is unreliable | Remove it from the inner loop |
-| First red result is in CI | The inner loop could not fail the claim | Update the path map |
+| Rollback | The recorded suite could not see the production failure | Widen the rule one level, or add the missing edge |
+| P0 | No case covered a severe failure | Add one case the rule will keep selecting |
+| Regression | An old behavior was not selected, or not encoded | Add the case, or add the missing edge |
+| Flake chased to green | The check is unreliable | Remove it until the same assertion fails twice, with no product change |
+| First red result is in CI | The rule could not fail the claim | Widen the rule, or add the edge |
 
 ### The improvement cycle
 
@@ -135,11 +147,11 @@ Two signals come from the loop itself, before an incident.
 
 Each turn changes the harness. The incident is the evidence for that one rule.
 
-1. **Check.** Run the suite the map names, inside the time box.
-2. **Ship.** Merge with the four-line record: claim, command, result, uncovered part.
+1. **Check.** Run the set the selection rule names, inside the time box. Record any overflow sent to CI.
+2. **Ship.** Attach the four-line record to the change: claim, command, result, uncovered part. Without it, a later rollback cannot be tied to the check that ran.
 3. **Signal.** For changes the agent verified, collect rollbacks, P0s, and regressions. Also note flakes the agent tried to fix, and claims whose first failure showed up in CI.
-4. **Adjust.** Classify the miss: wrong claim, suite one level too low, missing case, flaky check, or missing record. Change one rule. That is one row of the path map, one test added to the mapped suite, or one check removed from the inner loop.
-5. The next change starts at Check under the new rule. Wait for the same miss to repeat, unless one incident is severe enough that the missing case is already obvious. Leave the rest of the map alone.
+4. **Adjust.** Classify the miss: wrong claim, rule one level too narrow, missing edge, missing case, flaky check, or missing record. Change one of those. Leave the rest of the rule alone.
+5. The next change starts at Check under the new rule. Wait for the same miss to repeat, unless the missing case is already obvious from one severe incident.
 
 ### Further reading
 
