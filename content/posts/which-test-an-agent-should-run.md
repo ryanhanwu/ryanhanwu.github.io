@@ -62,7 +62,38 @@ A pricing rule changes in one module. The claim is: orders over $100 get 10% off
 
 A Submit button is added on the settings page. The claim is: Submit adds a row and the empty state goes away. A unit test of the handler can pass while the button on the page calls nothing. The first check cannot see the wiring, so the procedure escalates once. One scripted path clicks Submit, asserts the row, and saves the trace. The screenshot of the form is attached to that run.
 
-Run the cheapest existing check that can fail the claim. If that check cannot see the failure, escalate once. Leave the broad suites to continuous integration.
+### Put this in the agent instructions
+
+The procedure above is the policy. Write it into the harness so the model follows it on the next task.
+
+1. Require a claim before any check runs. One sentence, taken from the task. Verification waits until that sentence is written down.
+2. Keep a path-to-suite map in the repository. The test runner reads it. For a web repo, start here and replace the paths with your own:
+
+```text
+src/lib, src/domain          unit tests for the touched modules
+src/api, db, jobs            integration test on that boundary
+src/pages, src/components    one scripted path when behavior changed
+styles, copy                 screenshot of the touched states
+schemas, generated clients   existing contract test or replay
+```
+
+3. Set two time boxes. A logic change or one boundary gets about two minutes and no browser. One escalation, a browser path or a replay, gets a few minutes more. The full end-to-end pack, visual baselines, and the replay corpus stay in CI.
+4. Run a test this change did not author. When no existing test can fail the claim, add one case and take the assertion from the claim. Say that in the record.
+5. Keep the fixture that was already in the repo when the diff does not modify that collaborator. A new mock belongs in the patch only when this change owns the logic and the collaborator is out of scope.
+6. Close with four lines: the claim, the command, the result, and the part of the claim still uncovered. Attach a screenshot to a behavioral run. A screenshot with no command is an image, not a result.
+7. Escalate once. If the first check cannot see the failure, run one broader check, save the output, and stop.
+
+This is the block to paste:
+
+```text
+Before reporting done:
+1. Write the claim in one sentence, from the task.
+2. Run the cheapest existing suite for the paths you changed.
+3. If that suite cannot see the failure, escalate once.
+4. Report the claim, the command, the result, and what you did not check.
+Use a fixture that already exists for any collaborator this diff did not change.
+Leave the full end-to-end pack, visual baselines, and replay corpus to CI.
+```
 
 ### Further reading
 
