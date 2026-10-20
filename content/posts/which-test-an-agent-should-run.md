@@ -47,7 +47,7 @@ Make the selection with path rules and the existing test runner. A model asked t
 
 1. Write the claim in one sentence, from the task, before inspecting a passing result.
 2. Classify the diff from its paths: logic, a boundary, persisted data, an external contract, UI behavior, appearance, or config.
-3. Run the cheapest existing suite that covers that surface. Affected tests derived from the diff are preferable to a command the model invents.
+3. Run the cheapest existing suite that covers that surface. With a build graph, that suite is every impacted test target. Affected tests from the graph beat a command the model invents.
 4. Escalate once, and only for the part of the claim the first check cannot see. Cap the escalation at one extra run.
 5. Add a test only when nothing already in the repository can fail the claim. Add one case, at the layer just selected, with the assertion taken from the requirement.
 6. Record what ran, how long it took, and which part of the claim remains uncovered.
@@ -56,18 +56,28 @@ Bound the inner loop. A logic change or a single boundary should finish within a
 
 When two checks can both fail the claim, run the one more likely to fail if the change is wrong. Count runtime, the retries a flake will consume, and the tokens spent reading the log. If the check passes and part of the claim is still uncovered, spend the remaining budget on the next check.
 
+### Let the build graph choose the set
+
+A path map written by hand both over-selects and under-selects. `src/components` does not know which tests depend on the file that changed. A build graph does. Bazel is the common case. Buck2, Pants, Nx, and Turborepo's affected set are the same mechanism: changed files become targets, and the tests to run are the test targets that depend on them.
+
+Run every test target in that set. The agent does not drop targets to save a minute. The set is already the tests that can see this diff, and thinning it is how a wiring bug ships behind a green unit test. Hermetic sandboxing is what makes the set safe to run: inputs are declared, the result does not depend on whatever the agent left in the workspace, and the same inputs fail the same way twice. A remote cache is what makes the set cheap. A cache hit means those inputs did not change. It is a skipped run, and the record should say so.
+
+The graph does not see every claim. End-to-end paths, screenshots, and traffic replays often sit outside it, or they are too expensive to attach to every library change. When the claim is a user path, a visual change, or an external contract the graph does not encode, escalate once. `bazel test //...` on every edit still pays analysis, cache lookups, and unrelated flakes. The inner loop is the impacted targets. The full suite stays in CI.
+
+If a rollback lands while every impacted target was cached green, the graph is missing an edge, or the failure was outside it. Add the edge, or keep the one escalation. Leave the inner loop on the impacted set.
+
 ### Two changes
 
-A pricing rule changes in one module. The claim is: orders over $100 get 10% off, and the discount ignores shipping. Unit tests on that module can fail the claim, so the procedure stops. An end-to-end checkout would fail the same claim later, at a higher cost per minute.
+A pricing rule changes in one module. The claim is: orders over $100 get 10% off, and the discount ignores shipping. The build graph names the test targets that depend on that module. Run all of them. An end-to-end checkout would fail the same claim later, at a higher cost per minute.
 
-A Submit button is added on the settings page. The claim is: Submit adds a row and the empty state goes away. A unit test of the handler can pass while the button on the page calls nothing. The first check cannot see the wiring, so the procedure escalates once. One scripted path clicks Submit, asserts the row, and saves the trace. The screenshot of the form is attached to that run.
+A Submit button is added on the settings page. The claim is: Submit adds a row and the empty state goes away. The impacted unit tests can pass while the button on the page calls nothing, because the page wiring is outside that graph. Escalate once. One scripted path clicks Submit, asserts the row, and saves the trace. The screenshot of the form is attached to that run.
 
 ### Put this in the agent instructions
 
 The procedure above is the policy. Write it into the harness so the model follows it on the next task.
 
 1. Require a claim before any check runs. One sentence, taken from the task. Verification waits until that sentence is written down.
-2. Keep a path-to-suite map in the repository. The test runner reads it. For a web repo, start here and replace the paths with your own:
+2. Prefer the build graph. Run every impacted test target, and do not thin the set. Use a path map only when the repo has no graph. For a web repo, start here and replace the paths with your own:
 
 ```text
 src/lib, src/domain          unit tests for the touched modules
@@ -88,8 +98,8 @@ This is the block to paste:
 ```text
 Before reporting done:
 1. Write the claim in one sentence, from the task.
-2. Run the cheapest existing suite for the paths you changed.
-3. If that suite cannot see the failure, escalate once.
+2. Run every impacted test target from the build graph. If there is no graph, run the cheapest existing suite for the paths you changed.
+3. If that set cannot see the failure, escalate once.
 4. Report the claim, the command, the result, and what you did not check.
 Use a fixture that already exists for any collaborator this diff did not change.
 Leave the full end-to-end pack, visual baselines, and replay corpus to CI.
