@@ -62,21 +62,21 @@ When two checks can both fail the claim, run the one more likely to fail if the 
 
 A path prefix does not know which tests depend on a changed file. A build graph does.
 
-Bazel is the strict case: dependencies are declared, and tests run in a sandbox. Most application repos are on Nx, Turborepo, or Gradle, which can still name an affected set from project dependencies. Ask the tool for that set:
+Pants names the changed targets and their transitive dependents. Turborepo names the changed packages and the packages that depend on them:
 
 ```text
-bazel query "rdeps(//..., set(//pkg:changed))"
-# or bazel-diff between the merge base and HEAD, filtered to test targets
-nx affected -t test
+pants --changed-since=origin/main --changed-dependents=transitive test
+turbo run test --filter='...[origin/main]'
+# or: turbo run test --affected
 ```
 
-Run the impacted targets that fit the time box. Do not drop a target because it looks slow. A change to a core library can impact thousands of targets, and that set will not finish in two minutes. Run the small tests in the set first, and let the remote cache skip targets whose inputs did not change. Hand the rest to CI. The record lists what ran, which results were cache hits, and what CI still has to run.
+Run the affected set that fits the time box. Do not drop a target because it looks slow. A change to a core library can fan out to a large set, and that set will not finish in two minutes. Run the small tests first, and let the cache skip work whose inputs did not change. Hand the rest to CI. The record lists what ran, which results were cache hits, and what CI still has to run.
 
 A cache hit is a skipped run. It means those inputs did not change.
 
-A sandbox stops a test from reading files the target did not declare, so the result does not depend on whatever the agent left in the workspace. Timing, randomness, and races still flake inside that sandbox.
+Pants runs a test in a sandbox, so the result does not depend on files the target did not declare. Turborepo does not sandbox the task. In both, timing, randomness, and races still flake.
 
-End-to-end paths, screenshots, and traffic replays often have no edge from the changed target. Those claims use the one escalation above. `bazel test //...` is not the inner loop.
+End-to-end paths, screenshots, and traffic replays often have no edge from the changed target. Those claims use the one escalation above. `pants test ::`, or `turbo run test` with no filter, is not the inner loop.
 
 ### Two changes
 
