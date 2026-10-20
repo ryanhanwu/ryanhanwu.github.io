@@ -95,6 +95,42 @@ Use a fixture that already exists for any collaborator this diff did not change.
 Leave the full end-to-end pack, visual baselines, and replay corpus to CI.
 ```
 
+### Read the system after it ships
+
+Judge the policy by what happens after merge. A green inner loop only says the selected check passed.
+
+**Rollback.** The agent's check passed, and the change was reverted. Record the suite that ran and the failure production saw. When a unit test passed and the rollback was wiring or a contract mismatch, move that path up one level in the map.
+
+**P0.** A severe incident traces to a change the agent verified. Add the one case that would have failed, at the layer the map already assigns to those paths, and leave it in that suite. The next similar diff then fails inside the time box. Keep the full end-to-end pack in CI.
+
+**Regression.** A behavior that used to work breaks, and the suite for those paths stayed green. The affected tests missed the module, or no test encoded the old behavior. Add the regression to the suite the map already names.
+
+Two signals come from the loop itself, before an incident.
+
+**The agent edits the product until a check goes quiet.** The check is flaky. Remove it from the inner loop until it fails the same way twice. A retry loop will treat the flake as a product bug.
+
+**The first red result appears in CI, after the agent has stopped.** The inner loop selected a suite that could not fail the claim. Update the path map for that surface.
+
+| Signal | What failed in the policy | Change one rule |
+| --- | --- | --- |
+| Rollback | The suite that ran could not see the production failure | Move that path up one level |
+| P0 | No case covered a severe failure | Add one case at the current layer |
+| Regression | An old behavior was not selected, or not encoded | Add the case to the mapped suite |
+| Flake chased to green | The check is unreliable | Remove it from the inner loop |
+| First red result is in CI | The inner loop could not fail the claim | Update the path map |
+
+### The improvement cycle
+
+![Check, ship, read rollback P0 and regression, change one rule, then check again](/images/agentic-verification-cycle.png)
+
+Each turn changes the harness. The incident is the evidence for that one rule.
+
+1. **Check.** Run the suite the map names, inside the time box.
+2. **Ship.** Merge with the four-line record: claim, command, result, uncovered part.
+3. **Signal.** For changes the agent verified, collect rollbacks, P0s, and regressions. Also note flakes the agent tried to fix, and claims whose first failure showed up in CI.
+4. **Adjust.** Classify the miss: wrong claim, suite one level too low, missing case, flaky check, or missing record. Change one rule. That is one row of the path map, one test added to the mapped suite, or one check removed from the inner loop.
+5. The next change starts at Check under the new rule. Wait for the same miss to repeat, unless one incident is severe enough that the missing case is already obvious. Leave the rest of the map alone.
+
 ### Further reading
 
 - [Agent Settings Is the New Dotfiles](/posts/agent-settings-is-the-new-dotfiles/)
