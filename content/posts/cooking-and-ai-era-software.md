@@ -3,7 +3,11 @@ title: "Everyone Knows the Recipe"
 description: "AI made software recipes public. The scarce work is still the restaurant: efficiency under load, taste, trust, portable data, and whether mini UI is a ghost kitchen or a real business."
 publishDate: "2026-10-27T13:00:00.000Z"
 tags: ["ai", "engineering", "leadership", "product", "culture"]
+ogImage: "/images/everyone-knows-the-recipe-cover.jpg"
 ---
+
+![Everyone Knows the Recipe](/images/everyone-knows-the-recipe-cover.jpg)
+*The plate is simple. The kitchen is not.*
 
 AI made the software recipe public. Prompt patterns, frameworks, sample repos, weekend demos. Almost anyone can follow the steps at home. Almost no one can run the restaurant.
 
