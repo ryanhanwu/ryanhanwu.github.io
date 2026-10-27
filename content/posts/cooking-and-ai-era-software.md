@@ -1,6 +1,6 @@
 ---
 title: "Everyone Knows the Recipe"
-description: "Cooking is a useful map for software in the AI era: the recipe is public, home cooks can remake the dish, and after you leave the table the hard question is what data stays and whether it moves with you."
+description: "Cooking as a map for AI-era software: public recipes, chef efficiency, data that stays after you leave, and a world that may show kids less technology while agents become the main interface."
 publishDate: "2026-10-27T13:00:00.000Z"
 tags: ["ai", "engineering", "leadership", "product", "culture"]
 ---
@@ -121,6 +121,30 @@ Builders get a sharper design choice: make the dish good enough that people come
 
 ---
 
+### 10. The dining room goes quiet. The kitchen does not.
+
+Schools are pulling screens back. Phone bans spread. Some districts return Chromebooks to carts, cut one-to-one devices for younger grades, and put paper and teacher-led work in front again. Parents and principals are tired of the open dining room where every table has a glowing menu competing with the meal.
+
+That looks like a move backward into minimum technology. It might be. It might also be a change in what people are willing to *see*.
+
+Picture a restaurant that strips gadgets from the tables: no tablets for ordering, no QR codes, no screens on the wall. Guests talk, eat, leave. Behind the wall the kitchen still runs timers, inventory systems, and prep lines. Guests meet a waiter. They do not meet the industrial oven.
+
+Software may head the same way.
+
+- Visible surface shrinks: fewer apps to learn, fewer dashboards for kids, less "digital learning" as a product category
+- Primary interface shifts: ask an agent for the outcome instead of clicking through five tools
+- Software moves to the closed kitchen: policies, tools, data, evals, and workflows that agents operate on your behalf
+
+Kids in that world may not "see" software the way millennials did: folders, settings panels, install wizards. They may see a conversation, a result, and a teacher who still wants handwriting. The stack underneath gets denser. The interface gets thinner.
+
+> Minimum technology in the dining room can coexist with maximum automation in the kitchen. The agent is the waiter. Most people never tour the line.
+
+That creates a literacy gap worth naming. If the only interface is an agent, who teaches the next generation what the kitchen can do, what it must not do, and how to taste a bad plate before they swallow it? Pulling screens out of classrooms without teaching judgment about agents just relocates the risk from distraction to opaque dependence.
+
+For builders, the product question changes again. You may not win by shipping another app icon into a crowded home screen. You may win by being a reliable station the agent can call, with clear permissions, portable records, and food safety the waiter does not have to explain every time. Or you may win by being the waiter people trust when the dining room has gone quiet.
+
+---
+
 ### What this changes for builders
 
 The useful question is no longer "can we follow the recipe?" Most teams can.
@@ -133,5 +157,6 @@ Better questions:
 4. What part of the business is still hard after the demo works?
 5. What is the signature dish if every competitor can remake tonight's special?
 6. When the customer is done and leaves, what personal data and usage record stay behind, and can they take it with them?
+7. If the dining room goes minimum-tech and the agent is the waiter, are we a trusted interface, a station in the kitchen, or neither?
 
-Cooking did not stop mattering when cookbooks went mass-market. Professional kitchens just made the scarce skills clearer: prep, judgment, efficiency, service, and the ability to survive dinner service. Software adds another constraint the plate never had: what happens to the record after the meal. Builders are learning both lessons the hard way.
+Cooking did not stop mattering when cookbooks went mass-market. Professional kitchens just made the scarce skills clearer: prep, judgment, efficiency, service, and the ability to survive dinner service. Software adds constraints the plate never had: what happens to the record after the meal, and what kids learn when they mostly meet the waiter instead of the stove. Builders are learning those lessons the hard way.
