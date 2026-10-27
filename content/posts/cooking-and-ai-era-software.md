@@ -137,11 +137,20 @@ Software may head the same way.
 
 Kids in that world may not "see" software the way millennials did: folders, settings panels, install wizards. They may see a conversation, a result, and a teacher who still wants handwriting. The stack underneath gets denser. The interface gets thinner.
 
-> Minimum technology in the dining room can coexist with maximum automation in the kitchen. The agent is the waiter. Most people never tour the line.
+Mini UI is the software version of a ghost kitchen.
+
+A ghost kitchen has no dining room. No storefront you wander into. Orders arrive through a delivery app; food leaves in a bag. The customer meets DoorDash, not your floor plan. A mini-UI product works the same way: almost no screens of its own, capabilities exposed as tools and APIs, fulfillment routed through an agent the user already talks to. The agent is the delivery app. Your software is the kitchen that never needed a lease on Main Street.
+
+That pattern has upside and a trap.
+
+- Upside: you stop spending the roadmap on empty dining rooms nobody sits in. You optimize the dish, the ticket time, and the contract the agent can call.
+- Trap: the platform owns the relationship. Your brand thins out to a line item in someone else's chat. Margins look like delivery-app restaurant margins if you are interchangeable with the next ghost kitchen down the block.
+
+> Minimum technology in the dining room can coexist with maximum automation in the kitchen. Mini UI is a ghost kitchen: the agent takes the order, you cook out of sight.
 
 That creates a literacy gap worth naming. If the only interface is an agent, who teaches the next generation what the kitchen can do, what it must not do, and how to taste a bad plate before they swallow it? Pulling screens out of classrooms without teaching judgment about agents just relocates the risk from distraction to opaque dependence.
 
-For builders, the product question changes again. You may not win by shipping another app icon into a crowded home screen. You may win by being a reliable station the agent can call, with clear permissions, portable records, and food safety the waiter does not have to explain every time. Or you may win by being the waiter people trust when the dining room has gone quiet.
+For builders, the product question changes again. You may not win by shipping another app icon into a crowded home screen. You may win as a ghost kitchen the agent prefers: clear permissions, portable records, food safety the waiter does not have to explain every time, and a dish distinctive enough that the platform cannot silently swap you out. Or you may win by being the waiter people trust when the dining room has gone quiet.
 
 ---
 
@@ -157,6 +166,6 @@ Better questions:
 4. What part of the business is still hard after the demo works?
 5. What is the signature dish if every competitor can remake tonight's special?
 6. When the customer is done and leaves, what personal data and usage record stay behind, and can they take it with them?
-7. If the dining room goes minimum-tech and the agent is the waiter, are we a trusted interface, a station in the kitchen, or neither?
+7. If mini UI is a ghost kitchen, are we the trusted waiter, a kitchen the agent prefers, or a line item it can swap out?
 
 Cooking did not stop mattering when cookbooks went mass-market. Professional kitchens just made the scarce skills clearer: prep, judgment, efficiency, service, and the ability to survive dinner service. Software adds constraints the plate never had: what happens to the record after the meal, and what kids learn when they mostly meet the waiter instead of the stove. Builders are learning those lessons the hard way.
