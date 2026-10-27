@@ -1,6 +1,6 @@
 ---
 title: "Everyone Knows the Recipe"
-description: "Cooking is a useful map for software in the AI era: the recipe is public, home cooks can remake the dish, and the scarce work is still running a kitchen that survives dinner service."
+description: "Cooking is a useful map for software in the AI era: the recipe is public, home cooks can remake the dish, and after you leave the table the hard question is what data stays and whether it moves with you."
 publishDate: "2026-10-27T13:00:00.000Z"
 tags: ["ai", "engineering", "leadership", "product", "culture"]
 ---
@@ -98,6 +98,29 @@ In product terms, that signature is rarely "we use AI." It is domain depth, a di
 
 ---
 
+### 9. You eat, you leave. Software often keeps the plate.
+
+A dish is mostly done when you finish it. You pay, you leave, the meal is gone. Software often feels the same in the moment: open the app, get the result, close the tab.
+
+What stays is different.
+
+At a restaurant, the kitchen might remember you as a regular. Your order history, allergies, and card on file are thin. In software, the residue is thicker: personal data, usage records, preferences, files, chat logs, agent memory, embeddings of how you work. You used the product and left. The product did not fully leave you.
+
+That raises the transfer question. Can you take that history to another table?
+
+- Export that a human can read is not the same as import another product can use
+- Usage graphs and model memory are often trapped in a vendor format
+- "Delete my data" and "move my data" are different jobs; many products only half-solve the first
+- In the AI era, the sticky layer is often context: the prompts, evals, and memory that made the tool feel smart for *you*
+
+> The meal ends. The account, the logs, and the learned preferences may not. Portability is whether you can leave with more than a receipt.
+
+Lock-in used to mean file formats and integrations. It increasingly means accumulated context that is expensive to rebuild elsewhere. If your product's value depends on holding that residue hostage, you are running a kitchen that keeps the customer's leftovers in the freezer and calls it loyalty.
+
+Builders get a sharper design choice: make the dish good enough that people come back, or make leaving so lossy that they cannot afford to switch. The first compounds trust. The second compounds until regulation, a competitor with better export, or a bad incident forces the issue.
+
+---
+
 ### What this changes for builders
 
 The useful question is no longer "can we follow the recipe?" Most teams can.
@@ -109,5 +132,6 @@ Better questions:
 3. Who tastes the output before it leaves the pass?
 4. What part of the business is still hard after the demo works?
 5. What is the signature dish if every competitor can remake tonight's special?
+6. When the customer is done and leaves, what personal data and usage record stay behind, and can they take it with them?
 
-Cooking did not stop mattering when cookbooks went mass-market. Professional kitchens just made the scarce skills clearer: prep, judgment, efficiency, service, and the ability to survive dinner service. Software builders are learning the same lesson the hard way.
+Cooking did not stop mattering when cookbooks went mass-market. Professional kitchens just made the scarce skills clearer: prep, judgment, efficiency, service, and the ability to survive dinner service. Software adds another constraint the plate never had: what happens to the record after the meal. Builders are learning both lessons the hard way.
