@@ -1,17 +1,18 @@
 ---
 title: "Everyone Knows the Recipe"
-description: "AI made software recipes public. The scarce work is still the restaurant: efficiency under load, taste, trust, portable data, and whether mini UI is a ghost kitchen or a real business."
+description: "A note to the engineer who now owns the product. The recipe is public. You still have to run the restaurant: load, taste, trust, the data customers leave, and whether your mini UI is a ghost kitchen or a business."
 publishDate: "2026-10-27T13:00:00.000Z"
+updatedDate: "2026-10-29T13:00:00.000Z"
 tags: ["ai", "engineering", "leadership", "product", "culture"]
 ogImage: "/images/everyone-knows-the-recipe-cover.jpg"
 ---
 
 ![Everyone Knows the Recipe](/images/everyone-knows-the-recipe-cover.jpg)
-*The plate is simple. The kitchen is not.*
+*You can cook the plate. You now run the kitchen.*
 
-AI made the software recipe public. Prompt patterns, frameworks, sample repos, weekend demos. Almost anyone can follow the steps at home. Almost no one can run the restaurant.
+You can cook the dish. Prompt, agent, UI, a demo by the weekend. That recipe is public, and you are already good at it. The product you just took is the restaurant.
 
-That gap is the story of this industry right now.
+I have run the Tuesday shift, the one that has to cover the rent. You are the engineer who now owns that shift. Here is the part the recipe skips.
 
 > AI democratized the recipe. It did not democratize the restaurant.
 
@@ -19,88 +20,86 @@ That gap is the story of this industry right now.
 
 ### Recipe vs restaurant
 
-A recipe is a sequence: model, agent, UI, demo. Useful. Copyable. Not a moat.
+A recipe is a sequence: model, agent, UI, demo. You can follow it this weekend. So can anyone with the same post.
 
-A restaurant is customers, pricing, support, hiring, cash discipline, distribution, and reliability under load. Friends will praise one nice plate. Rent gets paid when you survive Tuesday dinner service.
+A restaurant is customers, pricing, support, hiring, cash discipline, distribution, and reliability under load. You still cook. You also own whether one praised plate becomes a Tuesday that pays the rent.
 
-If your strategy is "same model, same agent loop," you are competing on a cookbook page. Differentiation lives where tutorials stop: domain judgment, distribution, compounding context, and the habit of shipping under real constraints.
+If your plan is "same model, same agent loop," you are competing on a cookbook page. What belongs to you shows up where the tutorial stops: domain judgment, distribution, context that compounds, and shipping inside constraints the demo never had.
 
-> Ideas are cheap. Operating systems of work are not.
+> Ideas are cheap. The operating system of the work is what you now own.
 
 ---
 
 ### Home kitchen vs dinner service
 
-You can remake the dish at home. The professional edge shows when tickets pile up, something fails mid-service, and 7pm quality must match 5pm.
+You can remake the dish at home. The shift changes when tickets pile up, something fails in the middle of service, and 7pm has to match 5pm.
 
-That edge is unglamorous: mise en place, station timing, recovery, batching, and the decisions no recipe lists. In product engineering it looks like agent settings, evals, permissions, CI, cost control, incident response, and context that keeps the model from inventing a second architecture.
+The work is unglamorous. Mise en place, station timing, recovery, batching, and the calls no recipe lists. On your product that is agent settings, evals, permissions, CI, cost control, incident response, and enough context that the model does not invent a second architecture.
 
-Treat AI as a demo oven and you will rediscover this in production.
+Use the model as a demo oven and you meet this in production, on your pager.
 
-Before every agent run, prep still wins: clear acceptance checks, hard architecture boundaries, least-privilege tools, and verification that does not depend on "the chat looked good." Skip it once and you feel fast. Skip it for a week and you serve leftovers.
+Before every agent run, the prep is still yours: acceptance checks you can fail, architecture boundaries, least-privilege tools, and verification that does not rest on "the chat looked good." Skip it once and you feel fast. Skip it for a week and you serve leftovers.
 
 ---
 
 ### Taste and food safety
 
-Generation raised the volume of plausible output. It did not raise taste.
+You get more plausible plates than you can taste. Taste is still the job.
 
-Taste is knowing thin design, theater tests, and demo-complete work that cannot be operated. Design review and verification are the tasting spoons. Without them, abundance only plates mistakes faster.
+You have to see thin design, tests that only perform, and work that demos and cannot be operated. Design review and verification are how you taste. Skip them and the extra volume plates mistakes faster.
 
-> Models propose. Leaders decide what leaves the pass.
+> Models propose. You decide what leaves the pass.
 
-Food safety is the same category. Clever sauce does not survive a hygiene failure. Security, privacy, permissions, auditability, and data handling belong on the line before you celebrate ticket speed. After an incident, nobody cares how fast you cooked.
+Food safety sits on the same line. A clever sauce does not survive a hygiene failure. Put security, privacy, permissions, auditability, and data handling on the line before you celebrate how fast the tickets moved. After an incident, they ask what leaked and who was hurt.
 
-Distribution still matters too. A perfect closed kitchen fails without a dining room: onboarding, trust, support, brand. Copying a competitor's menu without their reservation book is not strategy. And one great chef is not a restaurant; AI leverage without review habits, shared context, and ownership after the chat closes just moves the fire to another station.
+You need a dining room too. A closed kitchen with a perfect dish still fails without onboarding, trust, support, and a brand. Copy the menu and skip their reservation book, and you still have no room full of regulars. One strong cook does not cover the floor. Leverage without review, shared context, and a person who owns the result after the chat closes moves the fire to the next station. You are that person.
 
-Trends fill menus with the same specials. Durable products keep a signature: domain depth, distribution, proprietary evals, a workflow customers already trust. "We use AI" is not a signature dish.
+The specials will look like everyone else's, because the recipes are public. Keep a signature: domain depth, distribution, evals you own, a workflow customers already trust. "We use AI" is a label. It is not a dish people come back for.
 
 ---
 
 ### The meal ends. The data often does not.
 
-Software feels consumable: use it, done, leave. Unlike a dish, it keeps a thick residue: personal data, usage history, preferences, files, chat logs, agent memory.
+People use what you shipped, finish, and leave. The software keeps a residue a plate does not: personal data, usage history, preferences, files, chat logs, agent memory.
 
-Portability is the real question. Can the customer take that history to another table?
+Portability is yours to answer. Can they take that history to another table?
 
-Export for humans is not import for competitors. Model memory often stays vendor-shaped. Delete and migrate are different products. Lock-in used to be file formats. Increasingly it is accumulated context that is expensive to rebuild.
+An export a person can read is a different product from an import a competitor can run. Model memory often stays in the shape of the vendor who stored it. Delete and migrate are different products. Lock-in used to be a file format. More often now it is context that costs a lot to rebuild.
 
 > Retention built on hostage data is not loyalty. It is deferred churn.
 
-Build a dish people return for, or build exit costs. One compounds trust. The other compounds until regulation or a better export forces the issue.
+Cook something people come back for, or build an exit that is expensive on purpose. Trust compounds in the first case. The second compounds until a rule, or a better export, forces your hand.
 
 ---
 
 ### Quiet dining rooms, ghost kitchens
 
-Schools are pulling screens back: phone bans, devices on carts, more paper, more teacher-led work. The surface is moving toward minimum technology.
+Schools are pulling screens back. Phone bans, devices on carts, more paper, more of the hour led by a person in the room. The surface is getting quieter.
 
-At the same time, AI agents are becoming the primary interface.
+Agents are becoming the interface your customer actually meets.
 
-Those two trends fit. Strip gadgets from the tables and guests still meet a waiter. They never tour the industrial oven. Visible software shrinks. Capability moves behind the wall. Kids may grow up meeting a conversation and a result, not folders and settings panels.
+The two moves fit. Take the gadgets off the table and the guest still meets a waiter. They never see your oven. What they see gets smaller. The capability sits behind the wall. Your next customers may grow up meeting a conversation and a result, not a settings panel.
 
-Mini UI is the product form of that shift: a ghost kitchen.
+Mini UI is that shape, and it is a ghost kitchen. You may not control the dining room. Orders arrive on someone else's platform. The bag goes out. The customer meets the agent, not your floor plan. What you own is the tools and APIs that agent calls.
 
-No dining room. No storefront. Orders arrive through a delivery platform; food leaves in a bag. The customer meets the agent, not your floor plan. Your product becomes tools and APIs the agent can call.
-
-The upside is focus: stop funding empty UI, optimize the dish and the contract. The trap is dependency: the platform owns the relationship, your brand thins to a line item, and interchangeable kitchens get delivery-app margins.
+Focus is the upside. Spend on the dish and the contract. UI nobody opens is a cost you can drop. Dependency is the trap. The platform owns the relationship, your name becomes a line on their menu, and a kitchen they can swap gets delivery-app margins.
 
 > Minimum interface is not minimum technology. It is a ghost kitchen. The agent takes the order. You cook out of sight.
 
-If agents are the only interface, literacy becomes the constraint. Someone still has to teach the next generation what the kitchen can do, what it must not do, and how to reject a bad plate. Remove screens without teaching agent judgment and you trade distraction for opaque dependence.
+When the agent is the only door, literacy is yours too. Show people what the kitchen can do, what it must not do, and how to send a bad plate back. Take the screens away and skip that teaching, and you swap distraction for a dependence they cannot inspect.
 
-Winning then looks different. Another home-screen icon is optional. Being the waiter people trust, or the kitchen an agent prefers and cannot silently replace, is the job.
+A new icon on the home screen is optional. Be the waiter they trust, or the kitchen an agent prefers and cannot quietly replace.
 
 ---
 
-### Operating questions
+### Questions you should be able to answer
 
-1. What must be true before we generate?
-2. Where do we stay efficient under real load?
-3. Who tastes before ship?
-4. What remains hard after the demo works?
-5. What is our signature when the special is public?
-6. When users leave, what data stays, and can they take it?
-7. In a ghost-kitchen market, are we the waiter, a preferred kitchen, or a replaceable SKU?
+1. What has to be true before you generate?
+2. Where do you stay efficient when the tickets pile up?
+3. Who tastes before it ships?
+4. What is still hard after the demo works?
+5. What is your signature once the special is public?
+6. When customers leave, what data stays, and can they take it?
+7. If the market is a ghost kitchen, are you the waiter, a preferred kitchen, or a replaceable SKU?
 
-Cookbooks did not end cooking. They clarified what was scarce. Software is in the same moment: recipes public, demos easy, dinner service still hard.
+Cookbooks did not end cooking. They made the scarce part obvious. You already know the recipe. Dinner service is the product you now own.
