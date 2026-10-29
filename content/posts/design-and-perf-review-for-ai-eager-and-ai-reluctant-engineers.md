@@ -1,123 +1,124 @@
 ---
 title: "Design Review and Perf Review for AI-Eager and AI-Reluctant Engineers"
-description: "In the AI era the engineering bar should rise — stronger architecture, higher test coverage. Use design review and perf review to coach both AI-eager and AI-reluctant engineers against that higher bar."
+description: "A note to engineers at every level. Code got cheaper to produce, so the bar on your architecture and your tests goes up. Design review and perf review are where you show that, whether you reach for a model first or last."
 publishDate: "2026-10-17T12:00:00.000Z"
+updatedDate: "2026-10-29T14:00:00.000Z"
 tags: ["leadership", "ai", "engineering", "management", "culture"]
 ogImage: "/images/two-ai-mindsets-cover.jpg"
 ---
 
 ![Design review and perf review for two AI adoption patterns](/images/two-ai-mindsets-cover.jpg)
-*Higher engineering bar. Different coaching path.*
+*The bar is higher. The packet is the same at every level.*
 
-AI makes it cheaper to produce code. That should raise the engineering bar, not lower it.
+AI makes it cheaper to produce code. The bar goes up with that.
 
-When generation is abundant, the scarce skills are **architecture quality** and **verification depth**: clearer boundaries, better failure handling, stronger invariants, and higher meaningful test coverage. Shipping more lines with the same design discipline and the same thin tests is not progress — it is accelerated technical debt.
+I have run design review and perf review. You are the engineer in the room, at any level. The packet is the same whether the work is a function or a boundary.
 
-Most teams now have two adoption patterns on the same roster. Both need coaching against that higher bar.
+The scarce skills are **architecture quality** and **verification depth**: clearer boundaries, better failure handling, stronger invariants, and higher meaningful test coverage. Ship more lines on the same design discipline and the same thin tests, and you are accumulating debt faster.
 
-**AI-eager engineers** reach for a model before they finish framing the problem. Throughput goes up. Ownership of design and tests sometimes goes down.
+You are in one of two habits. Both still have to clear that bar.
 
-**AI-reluctant engineers** prefer the pre-AI loop: read the code, sketch the design, ask a teammate. Craft stays high. Leverage can stall — including the leverage to raise architecture and coverage standards faster.
+**You reach for a model before you finish framing the problem.** Throughput goes up. Your ownership of the design and the tests sometimes goes down.
 
-Neither pattern is a performance issue by itself. Applying one coaching model to both is. Treating AI speed as permission to accept weaker designs or thinner tests is worse.
+**You stay on the pre-AI loop.** You read the code, sketch the design, ask a teammate. The craft stays high. The leverage stalls, including the leverage to raise architecture and coverage on a larger surface.
 
-The two highest-leverage places to intervene are already in the org: **design review** (how work is shaped) and **performance review** (how growth is rewarded).
+Neither habit is a performance issue by itself. If you are eager, "use the model less" is the wrong correction. If you are reluctant, "prompt more" is the wrong correction. Treat AI speed as permission for a weaker design or thinner tests, and that is what the review will record.
+
+You meet the bar in two rooms you already sit in. **Design review** is where the work gets its shape. **Performance review** is where your growth gets named.
 
 ---
 
 ### The bar moves up
 
-Hold every engineer — eager or reluctant — to a higher expectation than the pre-AI default:
+Eager or reluctant, you are held above the pre-AI default:
 
-1. **Architecture:** explicit boundaries, trade-offs, operability, and failure modes — not “it compiles and demos.”
-2. **Test coverage:** meaningful unit, integration, and regression coverage for the paths that matter, including agent-generated code.
-3. **Ownership:** the author can explain, debug, and evolve the system without the chat history.
+1. **Architecture:** explicit boundaries, trade-offs, operability, and failure modes. "It compiles and demos" is where the review starts.
+2. **Test coverage:** meaningful unit, integration, and regression coverage for the paths that matter, including code an agent wrote.
+3. **Ownership:** you can explain, debug, and evolve the system without the chat history.
 
-AI is an input to hitting that bar faster. It is not a reason to negotiate the bar down.
+Use the model to hit that bar faster. It is not a reason to negotiate the bar down.
 
 ---
 
 ### Pattern A: AI-eager, under-specified thinking
 
-**Failure mode:** The artifact looks complete. The rationale does not. Design choices arrive as prompt residue. Tests are sparse or generated without asserting the hard cases. Failure modes — latency, security, migration, rollback — are under-owned.
+The artifact looks complete. The rationale does not. Design choices arrive as prompt residue. Your tests are sparse, or generated without asserting the hard cases. Latency, security, migration, and rollback are still yours, and the artifact skipped them.
 
-#### Design review: inspect judgment before tooling
+#### Design review: show the judgment before the tooling
 
-Require the engineer to present:
+Walk in with this, in your own words:
 
-1. **Problem statement** in their own words (no pasted prompt transcript).
-2. **Architecture options** considered and rejected, with trade-offs and boundary decisions.
-3. **Decision ownership** — why this design survives production constraints.
-4. **Verification plan** — what is tested, what is not, and how agent-generated code is covered (happy path plus failure modes).
+1. **Problem statement.** No pasted prompt transcript.
+2. **Architecture options** you considered and rejected, with the trade-offs and the boundary you chose.
+3. **Decision ownership.** Why this design survives production constraints.
+4. **Verification plan.** What is tested, what is not, and how agent-generated code is covered, happy path and failure modes.
 
-Treat model output as an input to review, not a substitute for design or for tests.
+The model output is an input you already reviewed. The design and the tests are still yours.
 
-> Principle: if the design and its critical tests cannot be explained without the chat history, ownership is incomplete.
+> If you cannot explain the design and its critical tests without the chat history, you do not own the change yet.
 
-#### Perf review: reward higher-bar outcomes, not raw volume
+#### Perf review: higher-bar outcomes, not raw volume
 
-Keep velocity as a signal. Weight it below architecture and verification quality:
+Velocity still counts. It counts less than architecture and verification quality:
 
-- Strength of design rationale across reviews
-- Meaningful coverage growth on high-risk paths (not vanity line counts)
-- Rate of avoidable defects caught late
-- Ability to debug and operate what the agent produced
-- Habit loop: *frame → design → ask → verify → own*, not *ask → ship*
+- Strength of your design rationale across reviews
+- Meaningful coverage growth on the risky paths, not a line count
+- Avoidable defects that still landed late
+- You can debug and operate what the agent produced
+- The loop you run: *frame → design → ask → verify → own*, not *ask → ship*
 
-Promote engineers who use AI to raise architecture quality and test depth — not merely to emit more code.
+What belongs on the record is that you used AI to raise architecture quality and test depth. More code, with nothing else, is a weak story.
 
 ---
 
 ### Pattern B: AI-reluctant, high craft, limited leverage
 
-**Failure mode:** Strong instincts about correctness, slower compounding. Useful caution can harden into avoidance of tools that would help raise architecture quality and coverage faster across a larger surface area.
+Your instincts about correctness are strong, and they compound slowly. Useful caution hardens into skipping tools that would help you raise architecture quality and coverage faster, across a larger surface.
 
-#### Design review: judge outcomes against the higher bar
+#### Design review: same bar, with or without the model
 
-Keep the review criteria constant — and stricter than before:
+The criteria stay the same, and they are stricter than the pre-AI default:
 
 1. Interface clarity and system boundaries
 2. Risk, operability, and migration path
 3. Evidence quality (data, prototypes, prior art)
 4. Test strategy for critical paths and regressions
-5. Open questions and decision deadlines
+5. Open questions, and the date you will decide them
 
-Do not require AI theater. Do invite optional, narrow use where it improves the review packet: test matrices, property/fuzz case ideas, API diffs, migration checklists, related-code search. Then evaluate the human decision.
+You do not owe the room an AI demo. When a narrow use makes the packet better, bring it: a test matrix, property or fuzz ideas, an API diff, a migration checklist, a search for related code. The room evaluates your decision.
 
-> Principle: respect craft. Still expect stronger architecture, deeper verification, and faster learning than the pre-AI baseline.
+> Your craft counts. Stronger architecture, deeper verification, and faster learning than the pre-AI baseline still apply to you.
 
-#### Perf review: measure selective leverage toward the higher bar
+#### Perf review: selective leverage toward the higher bar
 
-Look for growth in impact, not identity change:
+Show growth in what you can take on. You do not have to change who you are:
 
-- One workflow that improved architecture or coverage without quality loss
-- One investigation that used AI as a research or test-design assistant
-- Clear judgment about when *not* to use a model
-- Willingness to expand scope while holding a higher quality bar
+- One workflow that improved architecture or coverage without a quality loss
+- One investigation where you used AI as a research or test-design assistant
+- A clear call about when you left the model alone
+- Scope you took on while holding the higher quality bar
 
-Push when reluctance becomes a ceiling on architecture quality, verification depth, learning speed, or team throughput.
+If reluctance caps your architecture, your verification, how fast you learn, or the work the team can give you, say so in the review. Widen one workflow before the harder work goes to someone else.
 
 ---
 
-### Anti-patterns for managers
+### What to refuse
 
-| Anti-pattern | Why it fails |
+| If this is the rule | What it costs you |
 | --- | --- |
-| Universal AI mandates | Optimizes for compliance, not judgment |
-| Prompt / LOC generation metrics | Confuses activity with engineering quality |
-| Accepting thinner tests because “AI wrote it fast” | Lowers the bar exactly when it should rise |
-| Praising Pattern A for speed alone | Rewards hollow ownership |
-| Sheltering Pattern B from change | Quietly routes hard work away from them |
+| A mandate to use AI on everything | You optimize for looking compliant. Judgment drops out. |
+| Prompt counts or lines generated | Activity gets scored as engineering quality. |
+| Thinner tests because "AI wrote it fast" | You lowered the bar in the year it should have risen. |
+| Praise for speed alone | Hollow ownership gets the reward, so you repeat it. |
+| Shelter from the tools | The harder work goes to someone else. |
 
 ---
 
-### Operating model
+### What you bring
 
-| Lever | Job | Pattern A focus | Pattern B focus |
+| Review | Your job | If you reach for the model first | If you hold back |
 | --- | --- | --- | --- |
-| Design review | Inspect thinking against a higher bar | Force architecture trade-offs and a real test plan | Hold architecture + coverage bar; optional narrow AI assist |
-| Perf review | Reinforce habits | Reward verify-and-own, not volume | Reward selective leverage that raises quality |
+| Design review | Show the thinking against the higher bar | Trade-offs and a real test plan, in your words | The same architecture and coverage bar. AI only where it helps the packet. |
+| Perf review | Make the habit visible | Verify and own, not volume | Selective leverage that raised quality |
 
-Same raised standards for architecture, coverage, ownership, and impact. Different coaching for how each person gets there.
-
-That is the managerial job: **raise the engineering bar**, and vary the coaching path.
+Same standards for architecture, coverage, ownership, and impact. The habit you already have changes the path. It does not change the packet.
